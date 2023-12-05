@@ -50,3 +50,18 @@
   border: none;
   cursor: pointer;
 }
+.add-icon{
+    width: 43px;
+    height: 36px;
+    color: #fff;
+    background: rgb(0, 168, 247);
+    border: none;
+    cursor: pointer;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add-icon span{
+    font-size: 35px;
+}
