@@ -6,3 +6,8 @@
     height: 100vh;
     background-color: red;
 }
+.users-header{
+    display: inline-flex;
+
+    background-color: blue;
+}
