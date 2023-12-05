@@ -9,11 +9,10 @@
 .users-header {
   display: inline-flex;
 }
-.left-header{
-   /* background-color: blue; */
-   display: flex;
-   flex-wrap: wrap;
-
+.left-header {
+  /* background-color: blue; */
+  display: flex;
+  flex-wrap: wrap;
 }
 .printer {
   display: flex;
@@ -49,19 +48,24 @@
   background: #fff;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
 }
-.add-icon{
-    width: 43px;
-    height: 36px;
-    color: #fff;
-    background: rgb(0, 168, 247);
-    border: none;
-    cursor: pointer;
-    font-size: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.change-button button:hover {
+  background: rgb(0, 168, 247);
 }
-.add-icon span{
-    font-size: 35px;
+.add-icon {
+  width: 43px;
+  height: 36px;
+  color: #fff;
+  background: rgb(0, 168, 247);
+  border: none;
+  cursor: pointer;
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.add-icon span {
+  font-size: 35px;
 }
