@@ -15,6 +15,14 @@
   display: flex;
   flex-wrap: wrap;
 }
+.right-header{
+    margin-right: 20px;
+}
+.left-header{
+    margin-left: 20px;
+    height: 0;
+    margin-top: 10px;
+}
 .printer {
   display: flex;
   align-items: center;
@@ -82,6 +90,7 @@
   width: 100%;
   height: 40px;
   line-height: 28px;
+  margin-right: 10px;
   padding: 0 1rem;
   padding-left: 2.5rem;
   border: 2px solid transparent;
@@ -110,4 +119,8 @@ input:hover {
   fill: #9e9ea7;
   width: 1rem;
   height: 1rem;
+}
+.users-counter h3{
+    color: #fff;
+    font-weight: bold;
 }
