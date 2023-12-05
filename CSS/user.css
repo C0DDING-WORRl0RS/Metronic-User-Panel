@@ -1,36 +1,46 @@
-*{
-    font-family: "Poppins" , sans-serif;
+* {
+  font-family: "Poppins", sans-serif;
 }
-.container{
-    width: 100%;
-    height: 100vh;
-    background-color: red;
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: red;
 }
-.users-header{
-    display: inline-flex;
-
+.users-header {
+  display: inline-flex;
 }
-.printer{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 5px 5px;
-    vertical-align: middle;
-    width: 90px;
-    border: 1px solid #000000;
-    background-color: #fff;
-    border-radius: 5px;
+.printer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px 5px;
+  vertical-align: middle;
+  width: 90px;
+  border: 1px solid #000000;
+  background-color: #fff;
+  border-radius: 5px;
 }
-.update{
-    display: flex;
-    margin-left: 20px;
-    align-items: center;
-    justify-content: space-around;
-    padding: 5px 5px;
-    vertical-align: middle;
-    width: 120px;
-    border: 1px solid #000000;
-    background-color: #fff;
-    border-radius: 5px;
-
+.update {
+  display: flex;
+  margin-left: 20px;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px 5px;
+  vertical-align: middle;
+  width: 120px;
+  border: 1px solid #000000;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.change-page {
+  /* background-color: blue; */
+  margin-left: 10px;
+}
+.change-button button {
+  width: 43px;
+  height: 36px;
+  background: #fff;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
 }
