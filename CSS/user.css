@@ -7,9 +7,10 @@
   background-color: red;
 }
 .users-header {
-  display: inline-flex;
+  display: flex;
+  justify-content: space-between;
 }
-.left-header {
+.left-header, .right-header {
   /* background-color: blue; */
   display: flex;
   flex-wrap: wrap;
@@ -86,7 +87,7 @@
   border: 2px solid transparent;
   border-radius: 8px;
   outline: none;
-  background-color: #f3f3f4;
+  background-color:#fff;
   color: #0d0c22;
   transition: 0.3s ease;
 }
