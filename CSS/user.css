@@ -145,3 +145,7 @@ input:hover {
   justify-content: center;
   background: blue;
 }
+.profile-picture img{
+  width: 75px;
+  border-radius: 50%;
+}
