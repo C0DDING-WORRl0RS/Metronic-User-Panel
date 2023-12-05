@@ -9,6 +9,12 @@
 .users-header {
   display: inline-flex;
 }
+.left-header{
+   /* background-color: blue; */
+   display: flex;
+   flex-wrap: wrap;
+
+}
 .printer {
   display: flex;
   align-items: center;
