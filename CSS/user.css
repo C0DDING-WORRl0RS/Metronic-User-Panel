@@ -137,7 +137,10 @@ input:hover {
   margin: 0 auto;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
+  border: 1px solid black;
+  border-radius: 15px;
+ 
+  
   
 }
 .profiles {
@@ -150,6 +153,8 @@ input:hover {
   border: 1px solid black;
   border-radius: 15px;
   margin-left: 10px;
+  margin: 20px 20px;
+  
   
 }
 .profile-picture img{
