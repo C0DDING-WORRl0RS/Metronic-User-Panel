@@ -19,6 +19,7 @@
     width: 90px;
     border: 1px solid #000000;
     background-color: #fff;
+    border-radius: 5px;
 }
 .update{
     display: flex;
@@ -30,4 +31,6 @@
     width: 120px;
     border: 1px solid #000000;
     background-color: #fff;
+    border-radius: 5px;
+
 }
