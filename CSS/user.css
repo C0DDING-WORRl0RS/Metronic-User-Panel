@@ -1,6 +1,5 @@
 * {
-  font-family: "IRANSansWeb","Inter", Helvetica, "sans-serif";
-  
+  font-family: "IRANSansWeb", "Inter", Helvetica, "sans-serif";
 }
 .container {
   width: 100%;
@@ -11,18 +10,19 @@
   display: flex;
   justify-content: space-between;
 }
-.left-header, .right-header {
+.left-header,
+.right-header {
   /* background-color: blue; */
   display: flex;
   flex-wrap: wrap;
 }
-.right-header{
-    margin-right: 20px;
+.right-header {
+  margin-right: 20px;
 }
-.left-header{
-    margin-left: 20px;
-    height: 0;
-    margin-top: 10px;
+.left-header {
+  margin-left: 20px;
+  height: 0;
+  margin-top: 10px;
 }
 .printer {
   display: flex;
@@ -52,11 +52,10 @@
   margin-left: 10px;
   margin-top: 2px;
 }
-.change-page img{
+.change-page img {
   background: #00a8f7;
   padding: 10px 10px;
   border-radius: 5px;
-
 }
 .change-button button {
   width: 43px;
@@ -104,7 +103,7 @@
   border: 2px solid transparent;
   border-radius: 8px;
   outline: none;
-  background-color:#fff;
+  background-color: #fff;
   color: #0d0c22;
   transition: 0.3s ease;
 }
@@ -128,11 +127,16 @@ input:hover {
   width: 1rem;
   height: 1rem;
 }
-.users-counter h3{
-    color: #fff;
-    font-weight: bold;
+.users-counter h3 {
+  color: #fff;
+  font-weight: bold;
 }
-.profiles{
+.profile-container {
+  width: 97%;
+  margin: 0 auto;
+  background: gray;
+}
+.profiles {
   width: 645px;
   height: 343px;
   display: flex;
