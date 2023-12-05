@@ -149,3 +149,8 @@ input:hover {
   width: 75px;
   border-radius: 50%;
 }
+.username span{
+  font-weight: bold;
+  color: #fff;
+  font-size: 20px;
+}
