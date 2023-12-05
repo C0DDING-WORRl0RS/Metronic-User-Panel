@@ -132,3 +132,11 @@ input:hover {
     color: #fff;
     font-weight: bold;
 }
+.profiles{
+  width: 645px;
+  height: 343px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: blue;
+}
