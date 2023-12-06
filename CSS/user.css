@@ -49,6 +49,31 @@
   margin-bottom: 10px;
 }
 
+/* update navbar */
+.update-navbar{
+  position: absolute;
+  left: 34%;
+  top: 52px;
+  width: 133px;
+  border-radius: 7px;
+  background-color: red;
+  text-align: right;
+}
+
+.update-navbar nav {
+
+  width: 100%;
+}
+.update-navbar ul{
+  margin-right:10px ;
+  list-style: none;
+}
+.update-navbar ul li {
+  width: 100%;
+  background: blue;
+  margin-bottom: 10px;
+}
+
 .printer {
   display: flex;
   align-items: center;
