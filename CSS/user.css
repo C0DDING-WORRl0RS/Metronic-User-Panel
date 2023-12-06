@@ -34,19 +34,25 @@
   border-radius: 7px;
   background-color: red;
   text-align: right;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+  
 }
 .navbar nav {
 
   width: 100%;
 }
 .navbar ul{
+  width: 100%;
+  padding: 0;
   margin-right:10px ;
   list-style: none;
 }
 .navbar ul li {
   width: 100%;
+  padding: 10px 0px;
   background: blue;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
+
 }
 
 /* update navbar */
@@ -58,6 +64,7 @@
   border-radius: 7px;
   background-color: red;
   text-align: right;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 }
 
 .update-navbar nav {
@@ -65,13 +72,18 @@
   width: 100%;
 }
 .update-navbar ul{
+  width: 100%;
   margin-right:10px ;
   list-style: none;
+  padding: 0;
 }
 .update-navbar ul li {
   width: 100%;
+  padding: 10px 0px;
+
   background: blue;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
+
 }
 
 .printer {
