@@ -1,0 +1,13 @@
+.main-modal {
+    padding-bottom: 10%;
+    width: 100%;
+    background: linear-gradient(180deg, #217AFF 0%, #217AFF 100%)
+}
+
+.main-modal ul {
+    list-style: none;
+}
+
+.main-modal>div>div {
+    width: 100%;
+}
