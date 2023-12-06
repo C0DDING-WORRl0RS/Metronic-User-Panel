@@ -83,6 +83,9 @@
   margin-bottom: 2px;
 
 }
+.update-navbar ul li span , .navbar ul li span {
+   padding: 0 14px;
+}
 
 .printer {
   display: flex;
