@@ -32,7 +32,7 @@
   top: 52px;
   width: 104px;
   border-radius: 7px;
-  background-color: red;
+  background-color: #1e1e2d;
   text-align: right;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
   
@@ -47,11 +47,11 @@
   margin-right:10px ;
   list-style: none;
 }
-.navbar ul li {
+.navbar ul li , .update-navbar ul li {
   width: 100%;
   padding: 10px 0px;
-  background: blue;
   margin-bottom: 2px;
+  color: #92929F;
 
 }
 
@@ -62,7 +62,7 @@
   top: 52px;
   width: 133px;
   border-radius: 7px;
-  background-color: red;
+  background-color: #1e1e2d;
   text-align: right;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 }
@@ -80,8 +80,6 @@
 .update-navbar ul li {
   width: 100%;
   padding: 10px 0px;
-
-  background: blue;
   margin-bottom: 2px;
 
 }
