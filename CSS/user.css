@@ -98,9 +98,11 @@
   padding: 5px 5px;
   vertical-align: middle;
   width: 90px;
-  border: 1px solid #000000;
-  background-color: #fff;
+  border: 1px solid transparent;
+  background-color:#1e1e2d;
+  color: #aaaaaa;
   border-radius: 5px;
+  cursor: pointer;
 }
 .update {
   display: flex;
@@ -110,9 +112,11 @@
   padding: 5px 5px;
   vertical-align: middle;
   width: 120px;
-  border: 1px solid #000000;
-  background-color: #fff;
+  border: 1px solid transparent;
+  background-color:#1e1e2d;
+  color: #aaaaaa;
   border-radius: 5px;
+  cursor: pointer;
 }
 .change-page {
   /* background-color: blue; */
