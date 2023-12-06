@@ -83,6 +83,10 @@
   margin-bottom: 2px;
 
 }
+.update-navbar ul li:hover , .navbar ul li:hover  {
+  background-color: #1b1b29;
+  color: #2C9AFF;
+}
 .update-navbar ul li span , .navbar ul li span {
    padding: 0 14px;
 }
