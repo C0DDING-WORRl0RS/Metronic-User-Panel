@@ -233,23 +233,27 @@ input:hover {
   margin: 20px 20px;
 }
 .profile-picture img {
-  width: 75px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
 }
 .profile-picture span {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #2C9AFF;
-  width: 64px;
+  width: 65px;
   height: 65px;
   border-radius: 50%;
-  background: #2F264F;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   font-size: 2rem;
   margin-bottom: 13px;
+}
+.profile-picture > span:first-child{
+  background: #2F264F;
+  color: #2C9AFF;
+
 }
 .username span {
   font-weight: bold;
