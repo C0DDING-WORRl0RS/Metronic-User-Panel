@@ -211,10 +211,10 @@ input:hover {
 }
 .profile-container {
   width: 97%;
-  margin: 0 auto;
+  margin: 10px 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   flex-wrap: wrap;
   border-radius: 15px;
   background-color: #1e1e2d;
