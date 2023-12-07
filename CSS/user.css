@@ -250,10 +250,14 @@ input:hover {
   font-size: 2rem;
   margin-bottom: 13px;
 }
-.profile-picture > span:first-child{
+.first-span{
   background: #2F264F;
   color: #2C9AFF;
 
+}
+.second-span{
+  background: #392F28;
+  color: #E78B2F;
 }
 .username span {
   font-weight: bold;
