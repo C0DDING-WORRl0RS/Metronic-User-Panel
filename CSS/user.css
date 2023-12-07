@@ -259,6 +259,14 @@ input:hover {
   background: #392F28;
   color: #E78B2F;
 }
+.third-span{
+  background: #1C3238;
+  color: #50CD89;
+}
+.forth-span{
+  background: #2F264F;
+  color: #7239EA;
+}
 .username span {
   font-weight: bold;
   color: #fff;
