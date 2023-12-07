@@ -290,3 +290,11 @@ input:hover {
   border-radius: 10px;
   padding: 5px 10px;
 }
+/* -------------footer------------ */
+
+.footer{
+  background: blue;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 100px;
+}
