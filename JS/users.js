@@ -5,6 +5,7 @@ const printer = document.querySelector(".printer"); // Reference to the printer 
 const body = document.querySelector("body"); // Reference to the body element, not currently used in the script.
 const button = document.querySelector(".button"); // Reference to a button element for event binding.
 const profiles = document.querySelector(".profile-container"); // Reference to the profile container that will be shown/hidden.
+const update = document.querySelector(".update")
 
 // Opens the update nav bar and hides the main nav bar.
 function openUpdateNavbar(){
@@ -26,3 +27,22 @@ button.addEventListener("click" , (e) => {
     e.preventDefault(); // Prevent the default form submission behavior.
     profiles.style.display = "none"; // Hide the profiles container.
 });
+
+
+body.addEventListener("click" , (e) => {
+    e.preventDefault()
+    if(!e.target.classList.contains("printer")){
+        if(navbar.style.display = "block"){
+
+            navbar.style.display = "none"
+            // console.log(e.target);
+        }
+    } 
+    if(!e.target.classList.contains("update")){
+        if(updateNavBar.style.display = "block"){
+
+            updateNavBar.style.display = "none"
+            // console.log(e.target);
+        }
+    } 
+})
