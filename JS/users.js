@@ -29,20 +29,27 @@ button.addEventListener("click" , (e) => {
 });
 
 
+// Add an event listener to the body to handle clicks for toggling the visibility of navigation elements.
 body.addEventListener("click" , (e) => {
-    e.preventDefault()
+    e.preventDefault(); // Prevent the default action for the click event.
+    
+    // Check if the clicked target does not have the 'printer' class.
     if(!e.target.classList.contains("printer")){
-        if(navbar.style.display = "block"){
-
-            navbar.style.display = "none"
+        // If the main navbar is displayed, then hide it when clicking outside of the printer area.
+        if(navbar.style.display === "block"){ // Note: Assignment '=' changed to comparison '===' for correct behavior.
+            navbar.style.display = "none"; // Hide the navbar element.
+            // The console.log can be uncommented for debugging purposes to see the clicked target.
             // console.log(e.target);
         }
-    } 
+    }
+
+    // Check if the clicked target does not have the 'update' class.
     if(!e.target.classList.contains("update")){
-        if(updateNavBar.style.display = "block"){
-
-            updateNavBar.style.display = "none"
+        // If the update nav bar is displayed, then hide it when clicking outside of the update area.
+        if(updateNavBar.style.display === "block"){ // Note: Assignment '=' changed to comparison '===' for correct behavior.
+            updateNavBar.style.display = "none"; // Hide the update nav bar.
+            // This console.log can also be uncommented for debugging purposes to see the clicked target.
             // console.log(e.target);
         }
-    } 
-})
+    }
+}) 
