@@ -1,0 +1,14 @@
+@font-face {
+    font-family: iran-sans;
+    src: url(font/IRANSansXFaNum-UltraLight.ttf);
+}
+
+@font-face {
+    font-family: iran-sans-input;
+    src: url(font/IRANSansXFaNum-Regular.ttf);
+}
+
+@font-face {
+    font-family: iran-sans-title;
+    src: url(font/IRANSansXFaNum-Bold.ttf);
+}
