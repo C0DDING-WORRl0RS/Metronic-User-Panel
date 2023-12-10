@@ -1,6 +1,7 @@
 @import url(./font-style.css);
+
 /* @import url(./style.css); */
-*{
+* {
   font-family: iran-sans;
 }
 
@@ -9,6 +10,7 @@
   height: 100%;
   background-color: #fff;
 }
+
 .body-container {
   width: 100%;
   display: flex;
@@ -18,17 +20,20 @@
   border-radius: 15px;
   background-color: #fff;
 }
+
 .users-header {
   display: flex;
   justify-content: space-between;
   margin: 20px;
   height: 100%;
 }
+
 .left-header,
 .right-header {
   display: flex;
   flex-wrap: wrap;
 }
+
 .right-header {
   width: 29%;
   display: flex;
@@ -36,10 +41,12 @@
   justify-content: center;
   margin-top: 10px;
 }
+
 .left-header {
   margin-top: 10px;
   position: relative;
 }
+
 .navbar {
   position: absolute;
   display: none;
@@ -50,15 +57,18 @@
   text-align: right;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 }
+
 .navbar nav {
   width: 100%;
 }
+
 .navbar ul {
   width: 100%;
   padding: 0;
   list-style: none;
   margin-bottom: 0;
 }
+
 .navbar ul li,
 .update-navbar ul li {
   width: 100%;
@@ -82,21 +92,25 @@
 .update-navbar nav {
   width: 100%;
 }
+
 .update-navbar ul {
   width: 100%;
   list-style: none;
   padding: 0;
 }
+
 .update-navbar ul li {
   width: 100%;
   padding: 10px 0px;
   margin-bottom: 2px;
 }
+
 .update-navbar ul li:hover,
 .navbar ul li:hover {
   background-color: #f0f0f0;
   color: #2c9aff;
 }
+
 .update-navbar ul li span,
 .navbar ul li span {
   padding: 0 14px;
@@ -118,6 +132,7 @@
   cursor: pointer;
   margin-top: 5px;
 }
+
 .update {
   position: relative;
   display: flex;
@@ -135,10 +150,12 @@
   cursor: pointer;
   margin-top: 5px;
 }
+
 .change-page {
   margin-left: 10px;
   margin-top: 2px;
 }
+
 .change-page img {
   background: #00a8f7;
   padding: 10px 10px;
@@ -148,6 +165,7 @@
   width: 43px;
   height: 43px;
 }
+
 .change-button button {
   width: 43px;
   height: 43px;
@@ -158,10 +176,12 @@
   border-radius: 5px;
   margin-top: 3px;
 }
+
 .change-button button:hover {
   background: #00a8f7;
   transition: all 0.2s;
 }
+
 .add-icon {
   width: 43px;
   height: 36px;
@@ -175,9 +195,11 @@
   justify-content: center;
   border-radius: 5px;
 }
+
 .add-icon span {
   font-size: 35px;
 }
+
 .group {
   display: flex;
   line-height: 28px;
@@ -185,6 +207,7 @@
   position: relative;
   max-width: 190px;
 }
+
 .users-counter {
   margin-top: 8px;
 }
@@ -211,24 +234,26 @@
 }
 
 .input:focus,
-input:hover {
+input:not(.search-input):hover {
   outline: none;
   border-color: #eae2b766;
   background-color: #f0f0f0;
   box-shadow: 0 0 0 4px rgb(234 226 183 / 10%);
 }
 
-.icon {
+.icon-search {
   position: absolute;
   left: 1rem;
   fill: #9e9ea7;
   width: 1rem;
   height: 1rem;
 }
+
 .users-counter h4 {
   color: #000000;
   font-weight: bold;
 }
+
 .profile-container {
   width: 97%;
   margin: 10px 20px;
@@ -239,6 +264,7 @@ input:hover {
   border-radius: 15px;
   background-color: transparent;
 }
+
 .profiles {
   width: 45%;
   height: 300px;
@@ -252,15 +278,18 @@ input:hover {
   margin-left: 10px;
   margin: 20px 20px;
 }
+
 .datails span:first-of-type {
   font-weight: bold;
-  color:#000000 ;
+  color: #000000;
 }
+
 .profile-picture img {
   width: 65px;
   height: 65px;
   border-radius: 50%;
 }
+
 .profile-picture span {
   display: flex;
   align-items: center;
@@ -274,31 +303,38 @@ input:hover {
   font-size: 2rem;
   margin-bottom: 13px;
 }
+
 .first-span {
   background: #F1F4FF;
   color: #2c9aff;
 }
+
 .second-span {
   background: #FCF2E8;
   color: #e78b2f;
 }
+
 .third-span {
   background: #EEFBEC;
   color: #50cd89;
 }
+
 .forth-span {
   background: #F8F5FF;
   color: #7239ea;
 }
+
 .username span {
   font-weight: bold;
   color: #000000;
   font-size: 20px;
 }
+
 .user-job span {
   font-size: 15px;
   color: gray;
 }
+
 .users-datails {
   margin-top: 20px;
   display: flex;
@@ -313,6 +349,7 @@ input:hover {
   border-radius: 10px;
   padding: 5px 10px;
 }
+
 /* -------------footer------------ */
 
 .footer {
@@ -324,6 +361,7 @@ input:hover {
   padding-top: 2rem;
   margin-bottom: 30px;
 }
+
 .pages {
   display: flex;
   justify-content: space-between;
@@ -332,6 +370,7 @@ input:hover {
   margin-left: 15px;
   margin-left: 30px;
 }
+
 .pages span {
   margin-left: 10px;
   color: #92929f;
@@ -345,11 +384,13 @@ input:hover {
   justify-content: center;
   border-radius: 5px;
 }
+
 .pages span:hover {
   color: #2c9aff;
   background: #ebebeb;
   z-index: 3;
 }
+
 .pages span:nth-child(2) {
   color: #ffffff;
   background: #2c9aff;
@@ -361,13 +402,16 @@ input:hover {
   border-radius: 7px;
   height: 30px;
 }
+
 .pages span:nth-child(1),
 .pages span:nth-child(8) {
   font-size: 1.5rem;
 }
+
 .page-counter {
   margin-right: 48px;
 }
+
 .page-counter span {
   color: #92929f;
   font-size: 1.075rem;
