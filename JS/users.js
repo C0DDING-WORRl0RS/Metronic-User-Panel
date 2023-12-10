@@ -28,11 +28,7 @@ function openNavbar() {
 button.addEventListener("click", (e) => {
   e.preventDefault(); // Prevent the default action of the event (useful for not submitting a form)
 
-  // Iterate through each item in the 'eachProfile' NodeList or array
-  eachProfile.forEach((item) => {
-    item.style.display = "none"; // Hide the current item by setting its display CSS property to 'none'
-  });
-  // Note: Ensure 'eachProfile' is previously defined, e.g., const eachProfile = document.querySelectorAll('.profile');
+  profiles.style.display = "none"
 });
 
 // Add an event listener to the body to handle clicks for toggling the visibility of navigation elements.
@@ -60,4 +56,15 @@ body.addEventListener("click", (e) => {
       // console.log(e.target);
     }
   }
+});
+
+
+// table------------------------
+new DataTable('#example', {
+  columnDefs: [
+      {
+          targets: -1,
+          visible: false
+      }
+  ]
 });
