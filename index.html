@@ -122,12 +122,28 @@
 
                 <!-- left header item -->
                 <div class="icon">
-                    <div class="btn border-0 p-1">
-                        <span class="material-symbols-outlined coloresh fs-5"> notifications_active </span>
+                    <div class="btn border-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"> <span
+                            class="material-symbols-outlined coloresh fs-5">
+                            notifications_active </span></div>
+                    <div class="offcanvas offcanvas-start bg-primary-subtle" data-bs-scroll="true" tabindex="-1"
+                        id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">پروژه ما را...
+                            </h5>
+
+                        </div>
+                        <div class="offcanvas-body d-flex flex-column align-items-center">
+                            <p>کارفرمای عزیز ما اینجا ربات نیستیم, پس لطفا تغییرات بسیار اعمال نفرما, با تشکر.</p>
+                            <button type="button" class="btn-close-none" data-bs-dismiss="offcanvas"
+                                aria-label="Close">دکمه
+                                بازگشت:)</button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- leaft header item -->
+
+                <!-- left header item -->
                 <div class="btn border-0 logo-item cursor-pointer symbol symbol-35px symbol-md-45px position-relative">
                     <div>
                         <img class="symbol symbol-circle symbol-35px symbol-md-45px" src="Images/header/300-13.jpg"
@@ -283,6 +299,7 @@
         </div>
 
     </header>
+
     <div class="main-modal ">
         <!--begin::Toolbar container-->
         <div class="container-xl d-flex align-items-start">
@@ -390,6 +407,9 @@
             team for ever
         </div>
     </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
