@@ -1,5 +1,7 @@
-* {
-  font-family: "IRANSansWeb", "Inter", Helvetica, "sans-serif";
+@import url(./font-style.css);
+@import url(./style.css);
+*{
+  font-family: iran-sans;
 }
 
 .container {
@@ -28,8 +30,10 @@
   flex-wrap: wrap;
 }
 .right-header {
-  margin-right: 20px;
-  margin-top: 3px;
+  width: 37%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .left-header {
   margin-left: 20px;
@@ -155,14 +159,14 @@
   margin-top: 3px;
 }
 .change-button button:hover {
-  background: rgb(0, 168, 247);
+  background: #00a8f7;
   transition: all 0.2s;
 }
 .add-icon {
   width: 43px;
   height: 36px;
   color: #fff;
-  background: rgb(0, 168, 247);
+  background: #00a8f7;
   border: none;
   cursor: pointer;
   font-size: 35px;
@@ -183,7 +187,7 @@
 }
 
 .input {
-  width: 100%;
+  width: 182px;
   height: 40px;
   line-height: 28px;
   margin-right: 10px;
@@ -204,7 +208,7 @@
 .input:focus,
 input:hover {
   outline: none;
-  border-color: rgba(234, 226, 183, 0.4);
+  border-color: #eae2b766;
   background-color: #1e1e2d;
   box-shadow: 0 0 0 4px rgb(234 226 183 / 10%);
 }

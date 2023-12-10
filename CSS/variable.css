@@ -1,6 +1,40 @@
 :root {
-    --bg-600: #78829D;
-    --color-600: #217aff;
-    --border: #DBDFE9;
-    --format-colo: linear-gradient(180deg, #217AFF 0%, #217AFF 100%)
+  --bg-600: #78829d;
+  --color-600: #217aff;
+  --border: #dbdfe9;
+  --format-colo: linear-gradient(180deg, #217aff 0%, #217aff 100%);
+}
+/* dark mode colors */
+:root {
+  --container-bg: #06060c;
+  --body-container: #1e1e2d;
+  --navbar-container: #1e1e2d;
+  --body-container: #1e1e2d;
+  --update-navbar-li-color: #92929f;
+  --update-navbar-bg: #1e1e2d;
+  --update-navbar-box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+  --navbar-hover-bg: #1b1b29;
+  --navbar-hover-color: #2c9aff;
+  --printer-bg: #1e1e2d;
+  --printer-color: #aaaaaa;
+  --update-bg: #1e1e2d;
+  --update-color: #aaaaaa;
+  --change-page-img: #2c9aff;
+  --change-button-button: #1e1e2d;
+  --change-button-button-hover: #2c9aff;
+  --add-icon-bg: #2c9aff;
+  --add-icon-color: #fff;
+  --input-bg: #1e1e2d;
+  --input-color: #0d0c22;
+  --input-placeholder: #9e9ea7;
+  --profile-container-bg: #1e1e2d;
+  --profile-border-color: #3d3d50;
+  --first-name-profile-bg: #2f264f;
+  --first-name-profile-color: #2c9aff;
+  --second-name-profile-bg: #392f28;
+  --second-name-profile-color: #e78b2f;
+  --third-name-profile-bg: #1c3238;
+  --third-name-profile-color: #50cd89;
+  --forth-name-profile-bg: #2f264f;
+  --forth-name-profile-color: #7239ea;
 }
