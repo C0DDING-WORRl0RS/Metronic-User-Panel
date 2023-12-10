@@ -112,7 +112,8 @@ header .logo-item>div>img {
 .logo-item:hover .menu {
     visibility: visible;
     opacity: 1;
-    transition: all .2s ease-in;
+    transition: all .2s .5s ease-in;
+    transform: translateY(0px);
 }
 
 /* menu style strat */
@@ -125,6 +126,7 @@ header .logo-item>div>img {
     border-radius: 0.75rem;
     visibility: hidden;
     opacity: 0;
+    transform: translateY(15px);
 }
 
 .menu-item {
@@ -183,7 +185,124 @@ header .logo-item>div>img {
     color: var(--link-color-hover);
 }
 
-/* menu style satrt */
+/* share item strat */
+.menu-share-item {
+    left: 100%;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    width: 165px;
+    border-radius: 0.55rem;
+    background-color: var(--headre-menu);
+    box-shadow: var(--bs-menu-dropdown-box-shadow);
+}
+
+/* saher hover strat */
+.menu-share:hover .menu-share-item {
+    visibility: visible;
+    opacity: 1;
+    transition: all .2s .5s ease-in;
+    transform: translateY(0px);
+}
+
+.share-link {
+    color: var(--menu-link);
+    font-size: .80rem;
+    font-family: iran-sans-input;
+    font-weight: 600;
+    text-decoration: none;
+    width: 99%;
+    text-align: right;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+
+.share-link:hover {
+    color: var(--link-color-hover);
+    transition: color 0.2s ease;
+    background-color: var(--menu-link);
+}
+
+.form-check>label {
+    font-size: 2vh;
+}
+
+/* share hover end */
+/* share item end */
+/* mode start */
+.menu-mode-item {
+    left: 100%;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    width: 165px;
+    border-radius: 0.55rem;
+    background-color: var(--headre-menu);
+    box-shadow: var(--bs-menu-dropdown-box-shadow);
+}
+
+/* mode hover start */
+.menu-mode:hover .menu-mode-item {
+    visibility: visible;
+    opacity: 1;
+    transition: all .2s .5s ease-in;
+    transform: translateY(0px);
+}
+
+.share-link {
+    color: var(--menu-link);
+    font-size: .80rem;
+    font-family: iran-sans-input;
+    font-weight: 600;
+    text-decoration: none;
+    width: 99%;
+    text-align: right;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+
+/* mode hover end */
+/* mode end */
+/* language start */
+.menu-language-item {
+    left: 100%;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    width: 165px;
+    border-radius: 0.55rem;
+    background-color: var(--headre-menu);
+    box-shadow: var(--bs-menu-dropdown-box-shadow);
+}
+
+/* language hover start */
+.menu-language:hover .menu-language-item {
+    visibility: visible;
+    opacity: 1;
+    transition: all .2s .5s ease-in;
+    transform: translateY(0px);
+}
+
+.share-link {
+    color: var(--menu-link);
+    font-size: .80rem;
+    font-family: iran-sans-input;
+    font-weight: 600;
+    text-decoration: none;
+    width: 99%;
+    text-align: right;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+
+/* language hover end */
+/* language end */
+
+
+/* menu style end */
 
 
 /* responsive for header */
