@@ -16,6 +16,65 @@ body{
 .user-page{
   background-color: #fff;
 }
+
+
+
+.card {
+  border: 1px solid #F1F1F2;
+}
+.card .card-body {
+  padding: 2rem 2.25rem;
+}
+.card-body {
+    flex: 1 1 auto;
+}
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+.text-gray-800 {
+  color:#252F4A !important;
+}
+.text-hover-primary {
+  transition: color 0.2s ease;
+}
+.badge-light-success {
+  color:#50CD89;
+  background-color:#EEFBEC;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+}
+.text-gray-400 {
+  color: #B5B5C3 !important;
+}
+.btn.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+}
+.symbol-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-right: 10px;
+}
+.symbol.symbol-35px .symbol-label {
+  width: 35px;
+  height: 35px;
+}
+.symbol.symbol-circle, .symbol.symbol-circle > img, .symbol.symbol-circle .symbol-label {
+  border-radius: 50%;
+}
+.symbol-group .symbol-label {
+  position: relative;
+}
+
+
+
 .body-container {
   width: 100%;
   display: flex;
