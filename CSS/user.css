@@ -4,13 +4,18 @@
 * {
   font-family: iran-sans;
 }
+body{
+  background-color: #fff;
+}
 
 .container {
   width: 100%;
   height: 100%;
   background-color: #fff;
 }
-
+.user-page{
+  background-color: #fff;
+}
 .body-container {
   width: 100%;
   display: flex;
