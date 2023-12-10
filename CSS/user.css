@@ -30,14 +30,13 @@
   flex-wrap: wrap;
 }
 .right-header {
-  width: 37%;
+  width: 29%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 10px;
 }
 .left-header {
-  margin-left: 20px;
   margin-top: 10px;
   position: relative;
 }
@@ -58,23 +57,23 @@
 .navbar ul {
   width: 100%;
   padding: 0;
-  margin-right: 10px;
   list-style: none;
+  margin-bottom: 0;
 }
 .navbar ul li,
 .update-navbar ul li {
   width: 100%;
   padding: 10px 0px;
-  margin-bottom: 2px;
   color: #92929f;
 }
+
 
 /* update navbar */
 .update-navbar {
   position: absolute;
-  left: 34%;
+  left: 31%;
   top: 52px;
-  width: 133px;
+  width: 141px;
   display: none;
   border-radius: 7px;
   background-color: #1e1e2d;
@@ -87,7 +86,6 @@
 }
 .update-navbar ul {
   width: 100%;
-  margin-right: 10px;
   list-style: none;
   padding: 0;
 }
@@ -112,7 +110,7 @@
   justify-content: space-around;
   padding: 5px 5px;
   vertical-align: middle;
-  width: 90px;
+  width: 103px;
   height: 43px;
   border: 1px solid transparent;
   background-color: #1e1e2d;
@@ -128,7 +126,7 @@
   justify-content: space-around;
   padding: 5px 5px;
   vertical-align: middle;
-  width: 120px;
+  width: 142px;
   height: 43px;
   border: 1px solid transparent;
   background-color: #1e1e2d;
@@ -187,6 +185,11 @@
   position: relative;
   max-width: 190px;
 }
+.users-counter {
+  margin-top: 8px;
+}
+
+
 
 .input {
   width: 182px;
@@ -343,7 +346,7 @@ input:hover {
   background: #1b1b29;
   z-index: 3;
 }
-.pages span:nth-child(7) {
+.pages span:nth-child(2) {
   color: #ffffff;
   background: #2c9aff;
   display: flex;
