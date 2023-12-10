@@ -1,24 +1,35 @@
 * {
   font-family: "IRANSansWeb", "Inter", Helvetica, "sans-serif";
 }
+
 .container {
   width: 100%;
   height: 100%;
-  background-color: #0d0c22;
+  background-color: #06060c;
+}
+.body-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  border-radius: 15px;
+  background-color: #1e1e2d;
 }
 .users-header {
   display: flex;
   justify-content: space-between;
   margin: 20px;
+  height: 100%;
 }
 .left-header,
 .right-header {
-  /* background-color: blue; */
   display: flex;
   flex-wrap: wrap;
 }
 .right-header {
   margin-right: 20px;
+  margin-top: 3px;
 }
 .left-header {
   margin-left: 20px;
@@ -26,27 +37,69 @@
   margin-top: 10px;
   position: relative;
 }
-.navbar{
+.navbar {
   position: absolute;
+  display: none;
   left: 0px;
   top: 52px;
   width: 104px;
   border-radius: 7px;
-  background-color: red;
+  background-color: #1e1e2d;
   text-align: right;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 }
 .navbar nav {
-
   width: 100%;
 }
-.navbar ul{
-  margin-right:10px ;
+.navbar ul {
+  width: 100%;
+  padding: 0;
+  margin-right: 10px;
   list-style: none;
 }
-.navbar ul li {
+.navbar ul li,
+.update-navbar ul li {
   width: 100%;
-  background: blue;
-  margin-bottom: 10px;
+  padding: 10px 0px;
+  margin-bottom: 2px;
+  color: #92929f;
+}
+
+/* update navbar */
+.update-navbar {
+  position: absolute;
+  left: 34%;
+  top: 52px;
+  width: 133px;
+  display: none;
+  border-radius: 7px;
+  background-color: #1e1e2d;
+  text-align: right;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+}
+
+.update-navbar nav {
+  width: 100%;
+}
+.update-navbar ul {
+  width: 100%;
+  margin-right: 10px;
+  list-style: none;
+  padding: 0;
+}
+.update-navbar ul li {
+  width: 100%;
+  padding: 10px 0px;
+  margin-bottom: 2px;
+}
+.update-navbar ul li:hover,
+.navbar ul li:hover {
+  background-color: #1b1b29;
+  color: #2c9aff;
+}
+.update-navbar ul li span,
+.navbar ul li span {
+  padding: 0 14px;
 }
 
 .printer {
@@ -56,24 +109,31 @@
   padding: 5px 5px;
   vertical-align: middle;
   width: 90px;
-  border: 1px solid #000000;
-  background-color: #fff;
+  height: 30px;
+  border: 1px solid transparent;
+  background-color: #1e1e2d;
+  color: #aaaaaa;
   border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
 }
 .update {
   display: flex;
   margin-left: 20px;
   align-items: center;
+  height: 30px;
   justify-content: space-around;
   padding: 5px 5px;
   vertical-align: middle;
   width: 120px;
-  border: 1px solid #000000;
-  background-color: #fff;
+  border: 1px solid transparent;
+  background-color: #1e1e2d;
+  color: #aaaaaa;
   border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
 }
 .change-page {
-  /* background-color: blue; */
   margin-left: 10px;
   margin-top: 2px;
 }
@@ -81,18 +141,22 @@
   background: #00a8f7;
   padding: 10px 10px;
   border-radius: 5px;
+  margin-top: 3px;
+  cursor: pointer;
 }
 .change-button button {
   width: 43px;
-  height: 45px;
-  background: #fff;
+  height: 43px;
+  background: #1e1e2d;
   border: none;
   cursor: pointer;
   padding: 10px 10px;
   border-radius: 5px;
+  margin-top: 3px;
 }
 .change-button button:hover {
   background: rgb(0, 168, 247);
+  transition: all 0.2s;
 }
 .add-icon {
   width: 43px;
@@ -128,7 +192,7 @@
   border: 2px solid transparent;
   border-radius: 8px;
   outline: none;
-  background-color: #fff;
+  background-color: #1e1e2d;
   color: #0d0c22;
   transition: 0.3s ease;
 }
@@ -141,7 +205,7 @@
 input:hover {
   outline: none;
   border-color: rgba(234, 226, 183, 0.4);
-  background-color: #fff;
+  background-color: #1e1e2d;
   box-shadow: 0 0 0 4px rgb(234 226 183 / 10%);
 }
 
@@ -158,14 +222,13 @@ input:hover {
 }
 .profile-container {
   width: 97%;
-  margin: 0 auto;
+  margin: 10px 20px;
   display: flex;
+  justify-content: center;
+  align-items: flex-end;
   flex-wrap: wrap;
-  border: 1px solid black;
   border-radius: 15px;
- 
-  
-  
+  background-color: #1e1e2d;
 }
 .profiles {
   width: 45%;
@@ -174,18 +237,47 @@ input:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  border: 1px solid #3d3d50;
+  box-sizing: border-box;
   border-radius: 15px;
   margin-left: 10px;
   margin: 20px 20px;
-  
-  
 }
-.profile-picture img{
-  width: 75px;
+.profile-picture img {
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
 }
-.username span{
+.profile-picture span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  font-size: 2rem;
+  margin-bottom: 13px;
+}
+.first-span {
+  background: #2f264f;
+  color: #2c9aff;
+}
+.second-span {
+  background: #392f28;
+  color: #e78b2f;
+}
+.third-span {
+  background: #1c3238;
+  color: #50cd89;
+}
+.forth-span {
+  background: #2f264f;
+  color: #7239ea;
+}
+.username span {
   font-weight: bold;
   color: #fff;
   font-size: 20px;
@@ -194,18 +286,77 @@ input:hover {
   font-size: 15px;
   color: gray;
 }
-.users-datails{
-  
+.users-datails {
   margin-top: 20px;
   display: flex;
   flex-direction: row;
   color: #9e9ea7;
 }
 
-.datails{
+.datails {
   text-align: right;
   margin-left: 20px;
-  border: 1px dashed blue ;
+  border: 1px dashed #3d3d50;
   border-radius: 10px;
   padding: 5px 10px;
+}
+/* -------------footer------------ */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 2rem;
+  margin-bottom: 30px;
+}
+.pages {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-left: 15px;
+  margin-left: 30px;
+}
+.pages span {
+  margin-left: 10px;
+  color: #92929f;
+  cursor: pointer;
+  font-size: 1.075rem;
+  font-weight: 500;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.pages span:hover {
+  color: #2c9aff;
+  background: #1b1b29;
+  z-index: 3;
+}
+.pages span:nth-child(7) {
+  color: #ffffff;
+  background: #2c9aff;
+  display: flex;
+  min-width: 2.5rem;
+  height: 2.7rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  height: 30px;
+}
+.pages span:nth-child(1),
+.pages span:nth-child(8) {
+  font-size: 1.5rem;
+}
+.page-counter {
+  margin-right: 48px;
+}
+.page-counter span {
+  color: #92929f;
+  font-size: 1.075rem;
+  font-weight: 500;
 }

@@ -4,11 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>صفحه ی کاربران</title>
-    <link rel="stylesheet" href="../../CSS/user.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css"
+    />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="../../CSS/user.css" />
   </head>
   <body>
     <div class="container">
@@ -22,19 +27,43 @@
           <div class="navbar">
             <nav>
               <ul>
-                <li>Excel</li>
-                <li>Excel</li>
-                <li>Excel</li>
+                <li>
+                  <span>Excel</span>
+                </li>
+                <li>
+                  <span>پرینت</span>
+                </li>
+                <li>
+                  <span>PDF</span>
+                </li>
               </ul>
             </nav>
           </div>
-          <div class="update">
+          <div class="update" onclick="openUpdateNavbar()">
             <span class="material-symbols-outlined"> expand_more </span>
             <span>بروزرسانی</span>
+            <div class="update-navbar">
+              <nav>
+                <ul>
+                  <li>
+                    <span>بروزرسانی </span>
+                  </li>
+                  <li>
+                    <span>ماه last</span>
+                  </li>
+                  <li>
+                    <span>last quarter</span>
+                  </li>
+                  <li>
+                    <span>سال last</span>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
           <div class="change-page">
             <a href="#" class="change-button">
-              <button></button>
+              <button class="button"></button>
             </a>
           </div>
           <div class="change-page">
@@ -63,110 +92,235 @@
           </div>
         </div>
       </div>
-      <!-- profiles -->
+      <!------------------- profiles -------------------->
 
-      <div class="profile-container">
-        <div class="profiles">
-          <div class="profile-picture">
-            <img src="../../Images/users-images/300-2.jpg" alt="" />
-          </div>
-          <div class="username">
-            <span>کارینا کالرک</span>
-          </div>
-          <div class="user-job">
-            <span>مدیر هنری در شرکت نیووا</span>
-          </div>
-          <div class="users-datails">
-            <div class="datails">
-              <span>$14000</span><br>
-              <span> در آمد </span>
+      <div class="body-container">
+        <div class="profile-container">
+          <div class="profiles">
+            <div class="profile-picture">
+              <span class="first-span">S</span>
             </div>
-            <div class="datails">
-              <span>13</span><br>
-              <span> وظیفه ها  </span>
+            <div class="username">
+              <span>محسن برومند</span>
             </div>
-            <div class="datails">
-              <span>$25000</span><br>
-              <span> فروش </span>
+            <div class="user-job">
+              <span>توسعه دهنده</span>
+            </div>
+            <div class="users-datails">
+              <div class="datails">
+                <span>$14000</span><br />
+                <span> در آمد </span>
+              </div>
+              <div class="datails">
+                <span>13</span><br />
+                <span> وظیفه ها </span>
+              </div>
+              <div class="datails">
+                <span>$25000</span><br />
+                <span> فروش </span>
+              </div>
+            </div>
+          </div>
+          <div class="profiles">
+            <div class="profile-picture">
+              <img src="../../Images/users-images/300-2.jpg" alt="" />
+            </div>
+            <div class="username">
+              <span>کارینا کالرک</span>
+            </div>
+            <div class="user-job">
+              <span>مدیر هنری در شرکت نیووا</span>
+            </div>
+            <div class="users-datails">
+              <div class="datails">
+                <span>$14000</span><br />
+                <span> در آمد </span>
+              </div>
+              <div class="datails">
+                <span>13</span><br />
+                <span> وظیفه ها </span>
+              </div>
+              <div class="datails">
+                <span>$25000</span><br />
+                <span> فروش </span>
+              </div>
+            </div>
+          </div>
+          <div class="profiles">
+            <div class="profile-picture">
+              <img src="../../Images/users-images/300-14.jpg" alt="" />
+            </div>
+            <div class="username">
+              <span> رابرت رو</span>
+            </div>
+            <div class="user-job">
+              <span>تجزیه و تحلیل بازاریابی در</span>
+            </div>
+            <div class="users-datails">
+              <div class="datails">
+                <span>$14000</span><br />
+                <span> در آمد </span>
+              </div>
+              <div class="datails">
+                <span>13</span><br />
+                <span> وظیفه ها </span>
+              </div>
+              <div class="datails">
+                <span>$25000</span><br />
+                <span> فروش </span>
+              </div>
+            </div>
+          </div>
+          <div class="profiles">
+            <div class="profile-picture">
+              <img src="../../Images/users-images/300-1.jpg" alt="" />
+            </div>
+            <div class="username">
+              <span>جیمز کاردن </span>
+            </div>
+            <div class="user-job">
+              <span>طراح سایت در شرکت</span>
+            </div>
+            <div class="users-datails">
+              <div class="datails">
+                <span>$14000</span><br />
+                <span> در آمد </span>
+              </div>
+              <div class="datails">
+                <span>13</span><br />
+                <span> وظیفه ها </span>
+              </div>
+              <div class="datails">
+                <span>$25000</span><br />
+                <span> فروش </span>
+              </div>
+            </div>
+          </div>
+          <div class="profiles">
+            <div class="profile-picture">
+              <span class="second-span">A</span>
+            </div>
+            <div class="username">
+              <span>محمد ابراهیمی</span>
+            </div>
+            <div class="user-job">
+              <span>شرکت هنری</span>
+            </div>
+            <div class="users-datails">
+              <div class="datails">
+                <span>$14000</span><br />
+                <span> در آمد </span>
+              </div>
+              <div class="datails">
+                <span>13</span><br />
+                <span> وظیفه ها </span>
+              </div>
+              <div class="datails">
+                <span>$25000</span><br />
+                <span> فروش </span>
+              </div>
+            </div>
+          </div>
+          <div class="profiles">
+            <div class="profile-picture">
+              <img src="../../Images/users-images/300-6.jpg" alt="" />
+            </div>
+            <div class="username">
+              <span>امید وحیدی</span>
+            </div>
+            <div class="user-job">
+              <span>مدیر هنری در شرکت</span>
+            </div>
+            <div class="users-datails">
+              <div class="datails">
+                <span>$14000</span><br />
+                <span> در آمد </span>
+              </div>
+              <div class="datails">
+                <span>13</span><br />
+                <span> وظیفه ها </span>
+              </div>
+              <div class="datails">
+                <span>$25000</span><br />
+                <span> فروش </span>
+              </div>
+            </div>
+          </div>
+          <div class="profiles">
+            <div class="profile-picture">
+              <span class="third-span">N</span>
+            </div>
+            <div class="username">
+              <span>محسن برومند</span>
+            </div>
+            <div class="user-job">
+              <span>شماره کارت</span>
+            </div>
+            <div class="users-datails">
+              <div class="datails">
+                <span>$14000</span><br />
+                <span> در آمد </span>
+              </div>
+              <div class="datails">
+                <span>13</span><br />
+                <span> وظیفه ها </span>
+              </div>
+              <div class="datails">
+                <span>$25000</span><br />
+                <span> فروش </span>
+              </div>
+            </div>
+          </div>
+          <div class="profiles">
+            <div class="profile-picture">
+              <span class="forth-span">P</span>
+            </div>
+            <div class="username">
+              <span>Peter Marcus</span>
+            </div>
+            <div class="user-job">
+              <span>مدیر هنری در شرکت نوویکا</span>
+            </div>
+            <div class="users-datails">
+              <div class="datails">
+                <span>$14000</span><br />
+                <span> در آمد </span>
+              </div>
+              <div class="datails">
+                <span>13</span><br />
+                <span> وظیفه ها </span>
+              </div>
+              <div class="datails">
+                <span>$25000</span><br />
+                <span> فروش </span>
+              </div>
+            </div>
+          </div>
+  
+
+         
+          <!---------------footer ------------->
+          <div class="footer">
+            <div class="pages">
+              <span class="material-symbols-outlined"> chevron_left </span>
+              <span>6</span>
+              <span>5</span>
+              <span>4</span>
+              <span>3</span>
+              <span>2</span>
+              <span>1</span>
+              <span class="material-symbols-outlined"> chevron_right </span>
+            </div>
+            <div class="page-counter">
+              <span>صفحات 1 از 10 </span>
             </div>
           </div>
         </div>
-        <div class="profiles">
-          <div class="profile-picture">
-            <img src="../../Images/users-images/300-2.jpg" alt="" />
-          </div>
-          <div class="username">
-            <span>کارینا کالرک</span>
-          </div>
-          <div class="user-job">
-            <span>مدیر هنری در شرکت نیووا</span>
-          </div>
-          <div class="users-datails">
-            <div class="datails">
-              <span>$14000</span><br>
-              <span> در آمد </span>
-            </div>
-            <div class="datails">
-              <span>13</span><br>
-              <span> وظیفه ها  </span>
-            </div>
-            <div class="datails">
-              <span>$25000</span><br>
-              <span> فروش </span>
-            </div>
-          </div>
-        </div>
-        <div class="profiles">
-          <div class="profile-picture">
-            <img src="../../Images/users-images/300-2.jpg" alt="" />
-          </div>
-          <div class="username">
-            <span>کارینا کالرک</span>
-          </div>
-          <div class="user-job">
-            <span>مدیر هنری در شرکت نیووا</span>
-          </div>
-          <div class="users-datails">
-            <div class="datails">
-              <span>$14000</span><br>
-              <span> در آمد </span>
-            </div>
-            <div class="datails">
-              <span>13</span><br>
-              <span> وظیفه ها  </span>
-            </div>
-            <div class="datails">
-              <span>$25000</span><br>
-              <span> فروش </span>
-            </div>
-          </div>
-        </div>
-        <div class="profiles">
-          <div class="profile-picture">
-            <img src="../../Images/users-images/300-2.jpg" alt="" />
-          </div>
-          <div class="username">
-            <span>کارینا کالرک</span>
-          </div>
-          <div class="user-job">
-            <span>مدیر هنری در شرکت نیووا</span>
-          </div>
-          <div class="users-datails">
-            <div class="datails">
-              <span>$14000</span><br>
-              <span> در آمد </span>
-            </div>
-            <div class="datails">
-              <span>13</span><br>
-              <span> وظیفه ها  </span>
-            </div>
-            <div class="datails">
-              <span>$25000</span><br>
-              <span> فروش </span>
-            </div>
-          </div>
-        </div>
+
+         <!---------------- tables ---------------------->
+        
       </div>
     </div>
+    <script src="../../JS/users.js"></script>
   </body>
 </html>
