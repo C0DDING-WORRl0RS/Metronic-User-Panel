@@ -1,9 +1,6 @@
 @import url(./variable.css);
 @import url(./font-style.css);
 
-
-
-
 body {
     font-family: iran-sans;
 }
@@ -42,7 +39,7 @@ header {
 
 /* header image in left side */
 header .logo-item {
-    width: 40px;
+    width: 30px;
     padding: 0;
 }
 
@@ -113,7 +110,7 @@ span {
     }
 
     header .logo-item {
-        width: 60px;
+        width: 50px;
     }
 
     .header-search {
