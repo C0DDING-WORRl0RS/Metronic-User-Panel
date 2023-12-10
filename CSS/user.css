@@ -1,5 +1,5 @@
 @import url(./font-style.css);
-@import url(./style.css);
+/* @import url(./style.css); */
 *{
   font-family: iran-sans;
 }
@@ -34,10 +34,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
 }
 .left-header {
   margin-left: 20px;
-  height: 0;
   margin-top: 10px;
   position: relative;
 }
@@ -113,7 +113,7 @@
   padding: 5px 5px;
   vertical-align: middle;
   width: 90px;
-  height: 30px;
+  height: 43px;
   border: 1px solid transparent;
   background-color: #1e1e2d;
   color: #aaaaaa;
@@ -125,11 +125,11 @@
   display: flex;
   margin-left: 20px;
   align-items: center;
-  height: 30px;
   justify-content: space-around;
   padding: 5px 5px;
   vertical-align: middle;
   width: 120px;
+  height: 43px;
   border: 1px solid transparent;
   background-color: #1e1e2d;
   color: #aaaaaa;
@@ -147,6 +147,8 @@
   border-radius: 5px;
   margin-top: 3px;
   cursor: pointer;
+  width: 43px;
+  height: 43px;
 }
 .change-button button {
   width: 43px;
@@ -236,7 +238,7 @@ input:hover {
 }
 .profiles {
   width: 45%;
-  height: 343px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
