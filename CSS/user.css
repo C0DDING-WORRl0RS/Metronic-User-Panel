@@ -7,7 +7,7 @@
 .container {
   width: 100%;
   height: 100%;
-  background-color: #06060c;
+  background-color: #fff;
 }
 .body-container {
   width: 100%;
@@ -16,7 +16,7 @@
   align-items: flex-end;
   flex-wrap: wrap;
   border-radius: 15px;
-  background-color: #1e1e2d;
+  background-color: #fff;
 }
 .users-header {
   display: flex;
@@ -43,11 +43,10 @@
 .navbar {
   position: absolute;
   display: none;
-  left: 0px;
   top: 52px;
   width: 104px;
   border-radius: 7px;
-  background-color: #1e1e2d;
+  background-color: #f0f0f0;
   text-align: right;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 }
@@ -71,12 +70,11 @@
 /* update navbar */
 .update-navbar {
   position: absolute;
-  left: 31%;
   top: 52px;
   width: 141px;
   display: none;
   border-radius: 7px;
-  background-color: #1e1e2d;
+  background-color: #f0f0f0;
   text-align: right;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 }
@@ -96,7 +94,7 @@
 }
 .update-navbar ul li:hover,
 .navbar ul li:hover {
-  background-color: #1b1b29;
+  background-color: #f0f0f0;
   color: #2c9aff;
 }
 .update-navbar ul li span,
@@ -105,6 +103,7 @@
 }
 
 .printer {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -113,13 +112,14 @@
   width: 103px;
   height: 43px;
   border: 1px solid transparent;
-  background-color: #1e1e2d;
-  color: #aaaaaa;
+  background-color: #f0f0f0;
+  color: #4B5675;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 5px;
 }
 .update {
+  position: relative;
   display: flex;
   margin-left: 20px;
   align-items: center;
@@ -129,8 +129,8 @@
   width: 142px;
   height: 43px;
   border: 1px solid transparent;
-  background-color: #1e1e2d;
-  color: #aaaaaa;
+  background-color: #f0f0f0;
+  color: #000000;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 5px;
@@ -151,7 +151,7 @@
 .change-button button {
   width: 43px;
   height: 43px;
-  background: #1e1e2d;
+  background: #f0f0f0;
   border: none;
   cursor: pointer;
   padding: 10px 10px;
@@ -201,7 +201,7 @@
   border: 2px solid transparent;
   border-radius: 8px;
   outline: none;
-  background-color: #1e1e2d;
+  background-color: #f0f0f0;
   color: #0d0c22;
   transition: 0.3s ease;
 }
@@ -214,7 +214,7 @@
 input:hover {
   outline: none;
   border-color: #eae2b766;
-  background-color: #1e1e2d;
+  background-color: #f0f0f0;
   box-shadow: 0 0 0 4px rgb(234 226 183 / 10%);
 }
 
@@ -225,8 +225,8 @@ input:hover {
   width: 1rem;
   height: 1rem;
 }
-.users-counter h3 {
-  color: #fff;
+.users-counter h4 {
+  color: #000000;
   font-weight: bold;
 }
 .profile-container {
@@ -237,7 +237,7 @@ input:hover {
   align-items: flex-end;
   flex-wrap: wrap;
   border-radius: 15px;
-  background-color: #1e1e2d;
+  background-color: transparent;
 }
 .profiles {
   width: 45%;
@@ -246,11 +246,15 @@ input:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid #3d3d50;
+  border: 1px solid #F1F1F2;
   box-sizing: border-box;
   border-radius: 15px;
   margin-left: 10px;
   margin: 20px 20px;
+}
+.datails span:first-of-type {
+  font-weight: bold;
+  color:#000000 ;
 }
 .profile-picture img {
   width: 65px;
@@ -271,24 +275,24 @@ input:hover {
   margin-bottom: 13px;
 }
 .first-span {
-  background: #2f264f;
+  background: #F1F4FF;
   color: #2c9aff;
 }
 .second-span {
-  background: #392f28;
+  background: #FCF2E8;
   color: #e78b2f;
 }
 .third-span {
-  background: #1c3238;
+  background: #EEFBEC;
   color: #50cd89;
 }
 .forth-span {
-  background: #2f264f;
+  background: #F8F5FF;
   color: #7239ea;
 }
 .username span {
   font-weight: bold;
-  color: #fff;
+  color: #000000;
   font-size: 20px;
 }
 .user-job span {
@@ -343,7 +347,7 @@ input:hover {
 }
 .pages span:hover {
   color: #2c9aff;
-  background: #1b1b29;
+  background: #ebebeb;
   z-index: 3;
 }
 .pages span:nth-child(2) {
