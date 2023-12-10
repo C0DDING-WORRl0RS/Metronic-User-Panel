@@ -93,8 +93,7 @@ header .logo-item img {
     background-color: var(--bg-600);
 }
 
-.icon:hover>div i,
-span {
+.icon:hover>div i {
     color: var(--color-600);
 }
 
