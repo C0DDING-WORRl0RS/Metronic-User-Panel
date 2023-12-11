@@ -316,6 +316,16 @@ header .logo-item>div>img {
     box-shadow: var(--bs-menu-dropdown-box-shadow);
 }
 
+
+/* fast-link-icon (header) start */
+.fast-link-icon:hover>.menu-content {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0px);
+    z-index: 1;
+    transition: all.2s .3s ease-in-out;
+}
+
 /* headresh start */
 .menu-content .bg-image {
     background-image: url(../Images/header/menu-header-bg.jpg);
@@ -346,15 +356,61 @@ header .logo-item>div>img {
 }
 
 /* headeresh end */
-
-/* fast-link-icon (header) start */
-.fast-link-icon:hover>.menu-content {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0px);
-    z-index: 1;
-    transition: all.2s .3s ease-in-out;
+/* body strat */
+/* .fast-link-content>div>div {
+    padding: 10px;
+} */
+.fast-link-content a {
+    text-decoration: none;
 }
+
+.fast-link-content a:hover {
+    background-color: var(--bs-border-color);
+    transition: all .3s ease-in-out;
+}
+
+.fast-link-content>div {
+    margin: 0;
+}
+
+.fast-link-content>div>a>div {
+    text-align: center;
+}
+
+.fast-link-content>div>a>div>div:first-of-type {
+    font-size: 1rem;
+    color: var(--menu-link);
+}
+
+.fast-link-content>div>a>div>div:nth-of-type(2) {
+    font-size: .85rem;
+    color: var(--menu-link);
+}
+
+.fast-link-content>div>a>div>div:last-of-type {
+    font-size: .55rem;
+    color: var(--text-gray-400);
+}
+
+/* body end */
+
+/* footer start */
+.more-footer {
+    text-align: center;
+}
+
+.more-footer a {
+    font-size: small;
+    text-decoration: none;
+    color: var(--text-gray-400);
+    font-family: iran-sans-input;
+}
+
+.more-footer a:hover {
+    color: var(--link-color-hover);
+}
+
+/* footer end */
 
 /* fast-link-icon (header) end */
 

@@ -9,7 +9,8 @@
     --background-color-success-light: #EEFBEC;
     --link-color: #99A1B7;
     --link-color-hover: #2C9AFF;
-    ----bs-border-color: #F1F1F2;
+    --bs-border-color: #F1F1F2;
+    --text-gray-400: #B5B5C3;
     --menu-link: #252F4A;
     --format-colo: linear-gradient(180deg, #217AFF 0%, #217AFF 100%)
 }
