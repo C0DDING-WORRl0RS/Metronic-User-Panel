@@ -35,7 +35,7 @@ header {
     height: 100%;
     display: flex;
     align-items: center;
-    margin: 0 13px 0 13px;
+    margin: 0 3px 0 3px;
 }
 
 .left-item>div>div {
@@ -431,6 +431,13 @@ header .logo-item>div>img {
 
     .header-search>div {
         border: 1px solid var(--border);
+    }
+
+    .left-item>div {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin: 0 13px 0 13px;
     }
 }
 
