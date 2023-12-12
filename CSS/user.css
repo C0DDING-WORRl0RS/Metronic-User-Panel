@@ -1,9 +1,10 @@
 @import url(./font-style.css);
 
 /* @import url(./style.css); */
-* {
-  font-family: iran-sans;
-}
+
+
+
+
 body {
   background-color: #fff;
 }
@@ -13,6 +14,7 @@ body {
   height: 100%;
   background-color: #fff;
 }
+
 .user-page {
   background-color: #fff;
   border-radius: 31px;
@@ -21,33 +23,42 @@ body {
 .card {
   border: 1px solid #f1f1f2;
 }
+
 .card .card-body {
   padding: 2rem 2.25rem;
 }
+
 .card-body {
   flex: 1 1 auto;
 }
+
 .flex-center {
   justify-content: center;
   align-items: center;
 }
+
 .text-gray-800 {
   color: #252f4a !important;
 }
+
 .text-hover-primary {
   transition: color 0.2s ease;
 }
+
 .badge-light-success {
   color: #50cd89;
   background-color: #eefbec;
 }
+
 .badge {
   display: inline-flex;
   align-items: center;
 }
+
 .text-gray-400 {
   color: #b5b5c3 !important;
 }
+
 .btn.btn-icon {
   display: inline-flex;
   align-items: center;
@@ -55,28 +66,34 @@ body {
   padding: 0;
   line-height: 1;
 }
+
 .symbol-group {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   margin-right: 10px;
 }
+
 .symbol.symbol-35px .symbol-label {
   width: 35px;
   height: 35px;
 }
+
 .symbol.symbol-circle,
-.symbol.symbol-circle > img,
+.symbol.symbol-circle>img,
 .symbol.symbol-circle .symbol-label {
   border-radius: 50%;
 }
+
 .symbol-group .symbol-label {
   position: relative;
 }
+
 .profile-image {
   width: 35px;
   height: 35px;
 }
+
 .symbol .symbol-label {
   display: flex;
   align-items: center;
@@ -85,73 +102,92 @@ body {
   background-position: center center;
   background-size: cover;
 }
+
 a.btn.btn-sm.btn-primary.me-3 {
   height: 33px;
 }
+
 .menu.menu-sub.menu-sub-dropdown.menu-column.menu-rounded.menu-gray-800.menu-state-bg-light-primary.fw-semibold.w-200px.py-3 {
   display: none;
 }
+
 .d-flex.flex-wrap {
   margin-right: 10px;
 }
+
 .border.border-gray-300.border-dashed.rounded.min-w-125px.py-3.px-4.me-6.mb-3 {
   width: 162px;
   height: 89px;
 }
+
 img.mw-50px.mw-lg-75px {
   width: 93px;
 }
+
 .d-flex.flex-center.flex-shrink-0.bg-light.rounded.w-lg-150px.h-lg-150px.me-7.mb-4 {
   width: 180px;
 }
+
 .border.border-gray-300.border-dashed.rounded.min-w-125px.py-3.px-4.me-6.mb-3 {
   width: 162px;
   height: 89px;
   margin-left: 10px;
   border-style: dashed;
 }
+
 .border {
   border: 1px dashed #dee2e6 !important;
 }
+
 a.text-gray-800.text-hover-primary.fs-2.fw-bold.me-3 {
   text-decoration: none;
   margin-left: 12px;
 }
+
 a.symbol.symbol-35px.symbol-circle {
   text-decoration: none;
   color: #fff;
 }
+
 .separator {
   display: block;
   height: 0;
   margin-top: 29px;
   border-bottom: 1px solid #f1f1f2;
 }
+
 ul.nav.nav-stretch.nav-line-tabs.nav-line-tabs-2x.border-transparent.fs-5.fw-bold {
   padding: 0;
 }
+
 .py-5 {
-  padding-top: 1rem!important;
-  padding-bottom: 1rem!important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
   color: #99A1B7;
   font-size: 1.1rem;
 }
 
 
-.nav-line-tabs.nav-line-tabs-2x .nav-item .nav-link.active, .nav-line-tabs.nav-line-tabs-2x .nav-item.show .nav-link, .nav-line-tabs.nav-line-tabs-2x .nav-item .nav-link:hover:not(.disabled) {
-    border-bottom-width: 1px;
-    
+.nav-line-tabs.nav-line-tabs-2x .nav-item .nav-link.active,
+.nav-line-tabs.nav-line-tabs-2x .nav-item.show .nav-link,
+.nav-line-tabs.nav-line-tabs-2x .nav-item .nav-link:hover:not(.disabled) {
+  border-bottom-width: 1px;
+
 }
 
-.nav-line-tabs .nav-item .nav-link.active, .nav-line-tabs .nav-item.show .nav-link, .nav-line-tabs .nav-item .nav-link:hover:not(.disabled) {
-    background-color: transparent;
-    border: 0;
-    border-bottom: 1px solid var(--bs-primary);
-    transition: color 0.2s ease;
+.nav-line-tabs .nav-item .nav-link.active,
+.nav-line-tabs .nav-item.show .nav-link,
+.nav-line-tabs .nav-item .nav-link:hover:not(.disabled) {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--bs-primary);
+  transition: color 0.2s ease;
 }
+
 a.nav-link.text-active-primary.py-5.me-6 {
   margin-left: 16px;
 }
+
 @media (min-width: 1200px) {
   .fs-4 {
     font-size: 1.2rem !important;
@@ -194,7 +230,7 @@ a.nav-link.text-active-primary.py-5.me-6 {
   position: relative;
 }
 
-.navbar {
+.navbar:not(.navbar-nav-nav) {
   position: absolute;
   display: none;
   top: 52px;
@@ -216,7 +252,7 @@ a.nav-link.text-active-primary.py-5.me-6 {
   margin-bottom: 0;
 }
 
-.navbar ul li,
+.navbar ul li:not(.nav-item-item),
 .update-navbar ul li {
   width: 100%;
   padding: 10px 0px;
@@ -252,7 +288,7 @@ a.nav-link.text-active-primary.py-5.me-6 {
 }
 
 .update-navbar ul li:hover,
-.navbar ul li:hover {
+.navbar ul li:not(.nav-item-item):hover {
   background-color: #f0f0f0;
   color: #2c9aff;
 }

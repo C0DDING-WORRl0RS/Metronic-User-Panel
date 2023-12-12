@@ -1,6 +1,6 @@
 // Query selectors to get DOM elements for manipulation.
 const updateNavBar = document.querySelector(".update-navbar"); // Reference to the update nav bar.
-const navbar = document.querySelector(".navbar"); // Reference to the primary nav bar.
+const navbar = document.querySelector(".nav-d-item"); // Reference to the primary nav bar.
 const printer = document.querySelector(".printer"); // Reference to the printer icon that might be used for toggling display.
 const body = document.querySelector("body"); // Reference to the body element, not currently used in the script.
 const button = document.querySelector(".button"); // Reference to a button element for event binding.
@@ -60,11 +60,9 @@ body.addEventListener("click", (e) => {
 
 
 // table------------------------
-new DataTable('#example', {
-  columnDefs: [
-      {
-          targets: -1,
-          visible: false
-      }
-  ]
-});
+// new DataTable('#example', {
+//   columnDefs: [{
+//     targets: -1,
+//     visible: false
+//   }]
+// });
