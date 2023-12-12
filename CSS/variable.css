@@ -1,23 +1,23 @@
 :root {
 
-    --bg-600: #78829D;
-    --color-600: #217aff;
-    --border: #DBDFE9;
-    --header-menu-hover: #F1F1F2;
-    --headre-menu: #FFFFFF;
-    --bs-menu-dropdown-box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.15);
-    --bs-success: #50CD89;
-    --background-color-success-light: #EEFBEC;
-    --link-color: #99A1B7;
-    --link-color-hover: #2C9AFF;
-    --bs-border-color: #F1F1F2;
-    --text-gray-400: #B5B5C3;
-    --menu-link: #252F4A;
-    --format-colo: linear-gradient(180deg, #217AFF 0%, #217AFF 100%)
+  --bg-600: #78829D;
+  --color-600: #217aff;
+  --border: #DBDFE9;
+  --header-menu-hover: #F1F1F2;
+  --headre-menu: #FFFFFF;
+  --bs-menu-dropdown-box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.15);
+  --bs-success: #50CD89;
+  --background-color-success-light: #EEFBEC;
+  --link-color: #99A1B7;
+  --link-color-hover: #2C9AFF;
+  --bs-border-color: #F1F1F2;
+  --text-gray-400: #B5B5C3;
+  --menu-link: #252F4A;
+  --format-colo: linear-gradient(180deg, #217AFF 0%, #217AFF 100%)
 }
 
-  
-}
+
+
 /* dark mode colors */
 :root {
   --bg-600: #78829d;
