@@ -443,6 +443,29 @@ header .logo-item>div>img {
 
 
 /* leaft side header end--- */
+/* right item (header) start*/
+.offcanvas-right>div {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.accordion-header {
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordion-button {
+    width: 100%;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--headre-menu);
+}
+
+
+/* right item (header) end */
+
 /* header end */
 .main-modal {
     position: relative;
