@@ -513,3 +513,7 @@ section>.container {
     border-radius: 30px;
     background-color: aliceblue;
 }
+#chartdiv {
+    width: 100%;
+    height: 400px;
+  }
