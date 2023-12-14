@@ -517,6 +517,75 @@ section>.container {
     padding: 5%;
 }
 
+.dropdown-toggle::after {
+    display: none;
+}
+
+.button-icon {
+    border-radius: 8px;
+}
+
+.chart-header h4 {
+    font-size: .9rem;
+    text-align: right;
+    font-weight: bold;
+}
+
+.dashboard-dropdown {
+    padding: 0
+}
+
+.chart-header ul {
+    text-align: right;
+    list-style: none;
+    padding: 0;
+}
+
+.chart-header ul li {
+    font-size: .8rem;
+    color: var(--menu-link);
+    padding: 0 20px;
+}
+
+.hover-list-item {
+    background-color: var(--headre-menu);
+    box-shadow: var(--bs-menu-dropdown-box-shadow);
+    left: 101%;
+    top: 0;
+    z-index: 1;
+    border-radius: 0.75rem;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.hover-list-item ul {
+    width: max-content;
+    padding: 5px;
+}
+
+.hover-list-item ul a {
+    text-decoration: none;
+    color: var(--menu-link);
+    padding: 9px 3px 9px 35px;
+}
+
+.hover-list:hover .hover-list-item {
+    visibility: visible;
+    opacity: 1;
+    transition: all .2s .5s ease-in;
+    transform: translateY(0px);
+}
+
+.link-btn {
+    text-align: right;
+}
+
+.link-btn a {
+    font-size: .7rem;
+    padding: 3px 8px;
+}
+
 /* bar chart start */
 .bar-chart {
     flex-shrink: 0;
