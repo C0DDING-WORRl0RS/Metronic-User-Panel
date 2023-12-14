@@ -547,6 +547,10 @@ section>.container {
     padding: 0 20px;
 }
 
+.dropdown-item {
+    padding-left: 35px;
+}
+
 .hover-list-item {
     background-color: var(--headre-menu);
     box-shadow: var(--bs-menu-dropdown-box-shadow);
