@@ -1,5 +1,6 @@
 @import url(./variable.css);
 @import url(./font-style.css);
+/* @import url(./chart.css); */
 
 body {
     font-family: iran-sans;
@@ -510,10 +511,43 @@ section {
 }
 
 section>.container {
+    box-shadow: var(--bs-app-content-shadow);
     border-radius: 30px;
-    background-color: aliceblue;
+    background-color: var(--headre-menu);
+    padding: 5%;
 }
+
+/* bar chart start */
+.bar-chart {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 30px;
+    margin-top: 20px;
+    padding: 5%;
+    border: 1px solid var(--header-menu-hover);
+}
+
+/* chart start... */
 #chartdiv {
     width: 100%;
     height: 400px;
-  }
+}
+
+.apexcharts-inner {
+    width: 100%;
+}
+
+/* .apexcharts-toolbar {
+    display: none;
+} */
+
+/* .apexcharts-inner.apexcharts-graphical {
+    transform: translate(77px, 5px);
+} */
+
+/* .apexcharts-legend.apexcharts-align-center.apx-legend-position-bottom {
+    display: none;
+} */
+
+/* chart ens... */

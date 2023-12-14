@@ -13,7 +13,11 @@
   --bs-border-color: #F1F1F2;
   --text-gray-400: #B5B5C3;
   --menu-link: #252F4A;
-  --format-colo: linear-gradient(180deg, #217AFF 0%, #217AFF 100%)
+  --format-colo: linear-gradient(180deg, #217AFF 0%, #217AFF 100%);
+  --bs-app-content-shadow: 0px 0px 100px rgba(255, 255, 255, 0.25);
+  --bs-gutter-x: 1.25rem;
+  --bs-gutter-x: 1.25rem;
+  --bs-gutter-y: 0;
 }
 
 

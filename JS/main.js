@@ -1,4 +1,4 @@
-// varibles...
+// letibles...
 let icons = document.querySelectorAll('.icon-modal');
 
 console.log(icons);
@@ -41,196 +41,82 @@ $(document).ready(function () {
 });
 
 
-
-am5.ready(function() {
-
-
-  // Create root element
-  // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-  var root = am5.Root.new("chartdiv");
-  
-  
-  var myTheme = am5.Theme.new(root);
-  
-  myTheme.rule("Grid", ["base"]).setAll({
-    strokeOpacity: 0.1
-  });
-  
-  
-  // Set themes
-  // https://www.amcharts.com/docs/v5/concepts/themes/
-  root.setThemes([
-    am5themes_Animated.new(root),
-    myTheme
-  ]);
-  
-  
-  // Create chart
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/
-  var chart = root.container.children.push(
-    am5xy.XYChart.new(root, {
-      panX: false,
-      panY: false,
-      wheelX: "none",
-      wheelY: "none",
-      paddingLeft: 0
-    })
-  );
-  
-  
-  // Create axes
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-  var yRenderer = am5xy.AxisRendererY.new(root, {
-    minGridDistance: 30,
-    minorGridEnabled: true
-  });
-  yRenderer.grid.template.set("location", 1);
-  
-  var yAxis = chart.yAxes.push(
-    am5xy.CategoryAxis.new(root, {
-      maxDeviation: 0,
-      categoryField: "country",
-      renderer: yRenderer
-    })
-  );
-  
-  var xAxis = chart.xAxes.push(
-    am5xy.ValueAxis.new(root, {
-      maxDeviation: 0,
-      min: 0,
-      renderer: am5xy.AxisRendererX.new(root, {
-        visible: true,
-        strokeOpacity: 0.1,
-        minGridDistance: 80
-      })
-    })
-  );
-  
-  
-  // Create series
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-  var series = chart.series.push(
-    am5xy.ColumnSeries.new(root, {
-      name: "Series 1",
-      xAxis: xAxis,
-      yAxis: yAxis,
-      valueXField: "value",
-      sequencedInterpolation: true,
-      categoryYField: "country"
-    })
-  );
-  
-  var columnTemplate = series.columns.template;
-  
-  columnTemplate.setAll({
-    draggable: true,
-    cursorOverStyle: "pointer",
-    tooltipText: "drag to rearrange",
-    cornerRadiusBR: 10,
-    cornerRadiusTR: 10,
-    strokeOpacity: 0
-  });
-  columnTemplate.adapters.add("fill", (fill, target) => {
-    return chart.get("colors").getIndex(series.columns.indexOf(target));
-  });
-  
-  columnTemplate.adapters.add("stroke", (stroke, target) => {
-    return chart.get("colors").getIndex(series.columns.indexOf(target));
-  });
-  
-  columnTemplate.events.on("dragstop", () => {
-    sortCategoryAxis();
-  });
-  
-  // Get series item by category
-  function getSeriesItem(category) {
-    for (var i = 0; i < series.dataItems.length; i++) {
-      var dataItem = series.dataItems[i];
-      if (dataItem.get("categoryY") == category) {
-        return dataItem;
+let options = {
+  series: [{
+    data: [12478, 7546, 6083, 5041, 442],
+  }, ],
+  chart: {
+    type: "bar",
+    height: 350,
+    width: '100%',
+    offsetX: 0
+  },
+  grid: {
+    show: true,
+    borderColor: '#E1E1E1',
+    strokeDashArray: 8,
+    position: 'forward',
+    xaxis: {
+      lines: {
+        show: true
       }
-    }
-  }
-  
-  
-  // Axis sorting
-  function sortCategoryAxis() {
-    // Sort by value
-    series.dataItems.sort(function (x, y) {
-      return y.get("graphics").y() - x.get("graphics").y();
-    });
-  
-    var easing = am5.ease.out(am5.ease.cubic);
-  
-    // Go through each axis item
-    am5.array.each(yAxis.dataItems, function (dataItem) {
-      // get corresponding series item
-      var seriesDataItem = getSeriesItem(dataItem.get("category"));
-  
-      if (seriesDataItem) {
-        // get index of series data item
-        var index = series.dataItems.indexOf(seriesDataItem);
-  
-        var column = seriesDataItem.get("graphics");
-  
-        // position after sorting
-        var fy =
-          yRenderer.positionToCoordinate(yAxis.indexToPosition(index)) -
-          column.height() / 2;
-  
-        // set index to be the same as series data item index
-        if (index != dataItem.get("index")) {
-          dataItem.set("index", index);
-  
-          // current position
-          var x = column.x();
-          var y = column.y();
-  
-          column.set("dy", -(fy - y));
-          column.set("dx", x);
-  
-          column.animate({ key: "dy", to: 0, duration: 600, easing: easing });
-          column.animate({ key: "dx", to: 0, duration: 600, easing: easing });
-        } else {
-          column.animate({ key: "y", to: fy, duration: 600, easing: easing });
-          column.animate({ key: "x", to: 0, duration: 600, easing: easing });
+    },
+    yaxis: {
+      lines: {
+        show: false
+      }
+    },
+  },
+  legend: {
+    show: false,
+  },
+  plotOptions: {
+    bar: {
+      borderRadius: 4,
+      distributed: true,
+      hideOverflowingLabels: true,
+      horizontal: true,
+      columnWidth: '70%',
+      barHeight: '70%',
+      dataLabels: {
+        position: 'bottom'
+      },
+    },
+  },
+  dataLabels: {
+    enabled: false,
+    textAnchor: 'start',
+    style: {
+      colors: ['#E1E1E1']
+    },
+    formatter: function (val, opt) {
+      return opt.w.globals.labels[opt.dataPointIndex] + ":  " + val
+    },
+  },
+  xaxis: {
+    categories: [
+      "South Korea",
+      "Canada",
+      "United Kingdom",
+      "Netherlands",
+      "Italy",
+    ],
+  },
+  tooltip: {
+    theme: 'light',
+    x: {
+      show: true,
+    },
+    y: {
+      title: {
+        formatter: function () {
+          return 'Sessions:'
         }
       }
-    });
-  
-    // Sort axis items by index.
-    // This changes the order instantly, but as dx and dy is set and animated,
-    // they keep in the same places and then animate to true positions.
-    yAxis.dataItems.sort(function (x, y) {
-      return x.get("index") - y.get("index");
-    });
-  }
-  
-  // Set data
-  var data = [{
-    country: "USA",
-    value: 2025
-  }, {
-    country: "China",
-    value: 1882
-  }, {
-    country: "Japan",
-    value: 1809
-  }, {
-    country: "Germany",
-    value: 1322
-  }, {
-    country: "UK",
-    value: 1122
-  }];
-  
-  yAxis.data.setAll(data);
-  series.data.setAll(data);
-  
-  
-  // Make stuff animate on load
-  // https://www.amcharts.com/docs/v5/concepts/animations/
-  series.appear(1000);
-  chart.appear(1000, 100);
-  
-  }); // end am5.ready()
+    }
+  },
+  colors: ["rgba(62, 151, 255, 0.85)", "rgba(241, 65, 108, 0.85)", "rgba(80, 205, 137, 0.85)", "rgba(255, 199, 0, 0.85)", "rgba(114, 57, 234, 0.85)"]
+};
+
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+chart.render();
