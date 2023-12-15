@@ -1,5 +1,6 @@
 @import url(./variable.css);
 @import url(./font-style.css);
+/* @import url(./chart.css); */
 
 body {
   font-family: iran-sans;
@@ -500,35 +501,117 @@ section {
   margin-top: 20px;
 }
 
-section > .container {
-  border-radius: 30px;
-  background-color: aliceblue;
+section>.container {
+    box-shadow: var(--bs-app-content-shadow);
+    border-radius: 30px;
+    background-color: var(--headre-menu);
+    padding: 5%;
 }
-#chartdiv {
-  width: 100%;
-  height: 400px;
-}
-.px-5 {
-  padding-right: 0rem !important;
-  padding-left: 2rem !important;
 
+.dropdown-toggle::after {
+    display: none;
 }
-.menu-li{
-    font-size: 1rem;
-    color: var(--menu-link);
-    font-family: iran-sans-input;
-    font-weight: 200;
-    text-decoration: none;
-    width: 99%;
+
+.button-icon {
+    border-radius: 8px;
+}
+
+.chart-header h4 {
+    font-size: .9rem;
     text-align: right;
-    padding-right: 10px;
-    border-radius: 5px;
+    font-weight: bold;
 }
-.app-content-menu.menu-gray-800.menu-state-bg.flex-wrap.fs-5.fw-semibold.border-bottom.mt-n7.pt-5.pb-6.px-10.mb-10 {
-    display: flex;
+
+.dashboard-dropdown {
+    padding: 0
 }
-.menu-state-bg .menu-item .menu-link.active {
-    transition: color 0.2s ease;
-    background-color: var(--bs-menu-link-bg-color-active);
-    color: var(--bs-menu-link-color-active);
+
+.chart-header ul {
+    text-align: right;
+    list-style: none;
+    padding: 0;
 }
+
+.chart-header ul li {
+    font-size: .8rem;
+    color: var(--menu-link);
+    padding: 0 20px;
+}
+
+.dropdown-item {
+    padding-left: 35px;
+}
+
+.hover-list-item {
+    background-color: var(--headre-menu);
+    box-shadow: var(--bs-menu-dropdown-box-shadow);
+    left: 101%;
+    top: 0;
+    z-index: 1;
+    border-radius: 0.75rem;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.hover-list-item ul {
+    width: max-content;
+    padding: 5px;
+}
+
+.hover-list-item ul a {
+    text-decoration: none;
+    color: var(--menu-link);
+    padding: 9px 3px 9px 35px;
+}
+
+.hover-list:hover .hover-list-item {
+    visibility: visible;
+    opacity: 1;
+    transition: all .2s .5s ease-in;
+    transform: translateY(0px);
+}
+
+.link-btn {
+    text-align: right;
+}
+
+.link-btn a {
+    font-size: .7rem;
+    padding: 3px 8px;
+}
+
+/* bar chart start */
+.bar-chart {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 30px;
+    margin-top: 20px;
+    padding: 5%;
+    border: 1px solid var(--header-menu-hover);
+}
+
+/* chart start... */
+#chartdiv {
+    width: 100%;
+    height: 400px;
+}
+
+.apexcharts-inner {
+    width: 100%;
+}
+
+/* .apexcharts-toolbar {
+    display: none;
+} */
+
+/* .apexcharts-inner.apexcharts-graphical {
+    transform: translate(77px, 5px);
+} */
+
+/* .apexcharts-legend.apexcharts-align-center.apx-legend-position-bottom {
+    display: none;
+} */
+
+/* chart ens... */
