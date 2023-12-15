@@ -1,3 +1,4 @@
+// colums chart start
 let options = {
     series: [{
         data: [12478, 7546, 6083, 5041, 442],
@@ -75,10 +76,10 @@ let options = {
     },
     colors: ["rgba(62, 151, 255, 0.85)", "rgba(241, 65, 108, 0.85)", "rgba(80, 205, 137, 0.85)", "rgba(255, 199, 0, 0.85)", "rgba(114, 57, 234, 0.85)"]
 };
-
+// generate chart
 let chart = new ApexCharts(document.querySelector("#chart"), options);
 chart.render();
-
+// column chart end
 
 // Area  chart start...
 
@@ -171,18 +172,151 @@ let area = {
         theme: 'light',
         x: {
             show: true,
+
         },
         y: {
             show: false,
             title: {
                 formatter: function () {
-                    return 'Lins: '
+                    return 'Links: '
                 }
             }
-        }
+        },
     },
 };
 
+// generate the chart
 let areaChart = new ApexCharts(document.querySelector("#area-chart"), area);
 areaChart.render();
 // Area chart end...
+
+
+// column chart start
+am5.ready(function () {
+    // Create root element
+    let root = am5.Root.new("column-chart");
+
+    // Set themes
+    root.setThemes([
+        am5themes_Animated.new(root)
+    ]);
+
+    // Create chart
+    let chart = root.container.children.push(am5xy.XYChart.new(root, {
+        panX: false,
+        panY: false,
+        wheelX: "panX",
+        wheelY: "zoomX",
+        pinchZoomX: false,
+        paddingLeft: 0,
+        paddingRight: 1
+    }));
+
+    // Add cursor
+    let cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
+    cursor.lineY.set("visible", false);
+
+
+    // Create axes
+    let xRenderer = am5xy.AxisRendererX.new(root, {
+        minGridDistance: 30,
+        minorGridEnabled: false
+    });
+
+    xRenderer.labels.template.setAll({
+        rotation: -90,
+        centerY: am5.p50,
+        centerX: am5.p100,
+        paddingRight: 15
+    });
+
+    xRenderer.grid.template.setAll({
+        location: null
+    })
+
+    let xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+        maxDeviation: 0.3,
+        categoryField: "country",
+        renderer: xRenderer,
+        tooltip: am5.Tooltip.new(root, {})
+    }));
+
+    let yRenderer = am5xy.AxisRendererY.new(root, {
+        strokeOpacity: 0.1
+    })
+
+    let yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+        maxDeviation: 0.3,
+        renderer: yRenderer
+    }));
+
+    // Create series
+    let series = chart.series.push(am5xy.ColumnSeries.new(root, {
+        name: "Series 1",
+        xAxis: xAxis,
+        yAxis: yAxis,
+        valueYField: "value",
+        sequencedInterpolation: true,
+        categoryXField: "country",
+        tooltip: am5.Tooltip.new(root, {
+            labelText: "{valueY}"
+        })
+    }));
+
+    series.columns.template.setAll({
+        cornerRadiusTL: 5,
+        cornerRadiusTR: 5,
+        strokeOpacity: 0
+    });
+
+    series.set("fill", am5.color('#2C9AFF')); // set Series color to red
+
+    // Set data
+    let data = [{
+        country: "USA",
+        value: 720
+    }, {
+        country: "UK",
+        value: 625
+    }, {
+        country: "چین",
+        value: 602
+    }, {
+        country: "ژاپن",
+        value: 509
+    }, {
+        country: "المان",
+        value: 322
+    }, {
+        country: "فرانسه",
+        value: 214
+    }, {
+        country: "هند",
+        value: 204
+    }, {
+        country: "Spain",
+        value: 200
+    }, {
+        country: "ایتالیا",
+        value: 165
+    }, {
+        country: "Russia",
+        value: 152
+    }, {
+        country: "نروژ",
+        value: 125
+    }, {
+        country: "Canada",
+        value: 99
+    }];
+
+    xAxis.data.setAll(data);
+    series.data.setAll(data);
+
+
+    // Make stuff animate on load
+    series.appear(1000);
+    chart.appear(1000, 100);
+
+}); // end am5.ready()
+// column chart end ...
