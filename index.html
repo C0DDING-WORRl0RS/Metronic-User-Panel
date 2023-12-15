@@ -831,7 +831,93 @@
     </div>
     <section>
       <div class="container">
-        <div id="chartdiv"></div>
+        <div class="chart-container">
+            <div class="app-content-menu  menu-gray-800 menu-state-bg flex-wrap fs-5 fw-semibold border-bottom mt-n7 pt-5 pb-6 px-10 mb-10">
+                <!--begin::Menu item-->
+                <div class="menu-it pe-2">
+                    <a class="menu-li px-5 active" href="../../demo30/dist/index.html">
+                        <span class="menu-title text-gray-800">بررسی اجمالی</span>
+                    </a>
+                </div>
+                <!--end::Menu item-->
+                <!--begin::Menu item-->
+                <div class="menu-it pe-2">
+                    <a class="menu-li px-5" href="#">
+                        <span class="menu-title text-gray-800">پروژه ها</span>
+                    </a>
+                </div>
+                <!--end::Menu item-->
+                <!--begin::Menu item-->
+                <div class="menu-it pe-2">
+                    <a class="menu-li px-5" href="#">
+                        <span class="menu-title text-gray-800">اعضا</span>
+                    </a>
+                </div>
+                <!--end::Menu item-->
+                <!--begin::Menu item-->
+                <div class="menu-it pe-2">
+                    <a class="menu-li px-5" href="#">
+                        <span class="menu-title text-gray-800">اشتراک ها</span>
+                    </a>
+                </div>
+                <!--end::Menu item-->
+                <!--begin::Menu item-->
+                <div class="menu-it pe-2">
+                    <a class="menu-li px-5" href="#">
+                        <span class="menu-title text-gray-800">مشتریان</span>
+                    </a>
+                </div>
+                <!--end::Menu item-->
+                <!--begin::Menu item-->
+                <div class="menu-it pe-2">
+                    <a class="menu-li px-5" href="#">
+                        <span class="menu-title text-gray-800">محصولات</span>
+                    </a>
+                </div>
+                <!--end::Menu item-->
+                <!--begin::Menu item-->
+                <div class="menu-it pe-2">
+                    <a class="menu-li px-5" href="#">
+                        <span class="menu-title text-gray-800">اسناد</span>
+                    </a>
+                </div>
+                <!--end::Menu item-->
+            </div>
+
+            <div class="row gx-5 gx-xl-10">
+                <div class="card card-flush h-xl-100">
+                    <div class="card-header py-7">
+                        <!--begin::امار-->
+                        <div class="m-0">
+                            <!--begin::Heading-->
+                            <div class="d-flex align-items-center mb-2">
+                                <!--begin::Title-->
+                                <span class="fs-2hx fw-bold text-gray-800 me-2 lh-1 ls-n2">35,568</span>
+                                <!--end::Title-->
+                                <!--begin::Tags-->
+                                <span class="badge badge-light-danger fs-base">
+                                <i class="ki-outline ki-arrow-up fs-5 text-danger ms-n1"></i>8.02%</span>
+                                <!--end::Tags-->
+                            </div>
+                            <!--end::Heading-->
+                            <!--begin::توضیحات-->
+                            <span class="fs-6 fw-semibold text-gray-400">جلسات ارگانیک</span>
+                            <!--end::توضیحات-->
+                        </div>
+                        <!--end::امار-->
+                        <!--begin::Toolbar-->
+
+                        <!--end::Toolbar-->
+                    </div>
+                </div>
+                <div class="card-body pt-0 pb-1">
+                    <div class="min-h-auto" id="kt_charts_widget_27" style="min-height: 365px;">
+                        <div id="chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="chartdiv"></div> -->
       </div>
     </section>
 
@@ -845,6 +931,7 @@
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="JS/main.js"></script>
   </body>
 </html>

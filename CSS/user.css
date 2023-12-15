@@ -525,7 +525,7 @@ input:not(.search-input):hover {
 .datails {
   text-align: right;
   margin-left: 20px;
-  border: 1px dashed #3d3d50;
+  border: 1px dashed #dddddd;
   border-radius: 10px;
   padding: 5px 10px;
 }
