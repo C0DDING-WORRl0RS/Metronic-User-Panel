@@ -113,7 +113,7 @@ header .logo-item > div > img {
   transform: translateY(0px);
 }
 
-/* menu style strat */
+/* menu style start */
 .menu {
   background-color: var(--headre-menu);
   box-shadow: var(--bs-menu-dropdown-box-shadow);
@@ -129,7 +129,10 @@ header .logo-item > div > img {
 .menu-item {
   width: 270px;
 }
-
+.badge{
+  color: #F1416C;
+  background-color: #FFF2F1;
+}
 .menu-link {
   color: var(--menu-link);
   font-size: 0.8rem;
@@ -275,6 +278,28 @@ header .logo-item > div > img {
   box-shadow: var(--bs-menu-dropdown-box-shadow);
 }
 
+.rounded-1 {
+  border-radius: 0.55rem !important;
+}
+.ms-2 {
+  margin-right: 0.5rem !important;
+}
+
+.h-15px {
+  height: 15px !important;
+}
+.w-15px {
+  width: 15px !important;
+}
+img, svg {
+  vertical-align: middle;
+}
+.rounded-1 {
+  border-radius: 0.55rem !important;
+  width: 20px;
+  height: 20px;
+  margin-left: 3px;
+}
 /* language hover start */
 .menu-language:hover .menu-language-item {
   visibility: visible;
