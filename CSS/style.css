@@ -677,6 +677,48 @@ section > .container {
   height: 500px;
 }
 
+/* scroll icon start */
+[data-kt-scrolltop=on] .scrolltop {
+  opacity: 0.3;
+  animation: animation-scrolltop 0.4s ease-out 1;
+  display: flex;
+  background-color: red;
+}
+.scrolltop {
+  position: fixed;
+  display: flex;
+  cursor: pointer;
+  z-index: 105;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  bottom: 43px;
+  left: 7px;
+  background-color: #2C9AFF;
+  box-shadow: 0 0.5rem 1.5rem 0.5rem rgba(0, 0, 0, 0.075);
+  opacity: 0.3;
+  transition: color 0.2s ease;
+  border-radius: 0.75rem;
+  color: #eeeeee;
+}
+.scrolltop:hover{
+  opacity: 1;
+  transition: color 0.5s ease;
+}
+
+  
+@keyframes animation-scrolltop {
+  0% {
+    margin-bottom: -15px;
+  }
+  100% {
+    margin-bottom: 0;
+  }
+}
+/* scroll icon end */
+
+
 /* .apexcharts-toolbar {
     display: none;
 } */
