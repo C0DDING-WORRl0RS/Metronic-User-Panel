@@ -680,15 +680,14 @@ section > .container {
 /* scroll icon start */
 [data-kt-scrolltop=on] .scrolltop {
   opacity: 0.3;
-  animation: animation-scrolltop 0.4s ease-out 1;
   display: flex;
-  background-color: red;
 }
 .scrolltop {
   position: fixed;
   display: none;
   cursor: pointer;
   z-index: 105;
+  animation: animation-scrolltop 0.4s ease-out 1;
   justify-content: center;
   align-items: center;
   width: 36px;
