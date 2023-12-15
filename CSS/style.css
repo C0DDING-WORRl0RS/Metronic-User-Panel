@@ -148,7 +148,7 @@ header .logo-item > div > img {
 .menu-item:hover .menu-link {
   color: var(--link-color-hover);
   transition: color 0.2s ease;
-  background-color: var(--menu-link);
+  background-color: #ffffff;
 }
 
 /* menu image */
@@ -221,7 +221,7 @@ header .logo-item > div > img {
 .share-link:hover {
   color: var(--link-color-hover);
   transition: color 0.2s ease;
-  background-color: var(--menu-link);
+  background-color: #ffffff;
 }
 
 .form-check > label {
