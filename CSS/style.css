@@ -686,7 +686,7 @@ section > .container {
 }
 .scrolltop {
   position: fixed;
-  display: flex;
+  display: none;
   cursor: pointer;
   z-index: 105;
   justify-content: center;
@@ -697,7 +697,7 @@ section > .container {
   left: 7px;
   background-color: #2C9AFF;
   box-shadow: 0 0.5rem 1.5rem 0.5rem rgba(0, 0, 0, 0.075);
-  opacity: 0.3;
+  opacity: 0;
   transition: color 0.2s ease;
   border-radius: 0.75rem;
   color: #eeeeee;
