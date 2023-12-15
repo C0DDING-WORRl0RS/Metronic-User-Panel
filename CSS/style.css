@@ -95,7 +95,12 @@ header .logo-item>div>img {
 /* icon */
 .icon:hover>div:first-of-type {
   transition: 0.3s;
-  background-color: var(--bg-600);
+  background-color: #eeeeee;
+}
+.left-back {
+  color: #b5b5c3;
+  font-size: 13px;
+  margin-top: 5px;
 }
 
 .icon:hover>div i {
@@ -129,10 +134,9 @@ header .logo-item>div>img {
 .menu-item {
   width: 270px;
 }
-
 .badge {
-  color: #F1416C;
-  background-color: #FFF2F1;
+  color: #f1416c;
+  background-color: #fff2f1;
 }
 
 .menu-link {
@@ -295,7 +299,6 @@ header .logo-item>div>img {
 .w-15px {
   width: 15px !important;
 }
-
 img,
 svg {
   vertical-align: middle;
@@ -434,7 +437,8 @@ svg {
   font-family: iran-sans-input;
 }
 
-.more-footer a:hover {
+.more-footer a:hover,
+.more-footer span:hover {
   color: var(--link-color-hover);
 }
 
@@ -534,7 +538,7 @@ section {
   margin-top: 20px;
 }
 
-section>.container {
+section > .container {
   box-shadow: var(--bs-app-content-shadow);
   border-radius: 30px;
   background-color: var(--headre-menu);
@@ -550,13 +554,13 @@ section>.container {
 }
 
 .chart-header h4 {
-  font-size: .9rem;
+  font-size: 0.9rem;
   text-align: right;
   font-weight: bold;
 }
 
 .dashboard-dropdown {
-  padding: 0
+  padding: 0;
 }
 
 .chart-header ul {
@@ -566,7 +570,7 @@ section>.container {
 }
 
 .chart-header ul li {
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: var(--menu-link);
   padding: 0 20px;
 }
@@ -601,7 +605,7 @@ section>.container {
 .hover-list:hover .hover-list-item {
   visibility: visible;
   opacity: 1;
-  transition: all .2s .5s ease-in;
+  transition: all 0.2s 0.5s ease-in;
   transform: translateY(0px);
 }
 
@@ -610,10 +614,43 @@ section>.container {
 }
 
 .link-btn a {
-  font-size: .7rem;
+  font-size: 0.7rem;
   padding: 3px 8px;
 }
-
+/* status of bar start  */
+.status {
+  font-size: 0.9rem;
+}
+.text-danger {
+  background-color: #fff2f1;
+  color: #f1416c;
+  padding: 9px;
+  height: 19px;
+  width: 58px;
+  margin-top: 11px;
+  border-radius: 20px;
+}
+.text-danger-span {
+  font-size: 0.8rem;
+}
+.about{
+  font-size: 0.9rem; 
+  color: #B5B5C3;
+}
+.text-danger-success{
+  color: #50CD89;
+  background-color: #EEFBEC;
+  padding: 9px;
+  height: 19px;
+  width: 58px;
+  margin-top: 11px;
+  border-radius: 20px;
+}
+.success{
+  color: #50CD89;
+  background-color: #EEFBEC;
+}
+/* status of bar end  */
 /* bar chart start */
 .bar-chart {
   flex-shrink: 0;
