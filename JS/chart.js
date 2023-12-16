@@ -320,3 +320,113 @@ am5.ready(function () {
 
 }); // end am5.ready()
 // column chart end ...
+
+// line chart  orange start
+let areaOrange = {
+    chart: {
+        height: 350,
+        type: "area",
+        fontFamily: 'iran-sans-input'
+    },
+    series: [{
+        name: "Series 1",
+        data: [4, 7.5, 7.5, 6, 6, 4, 4, 6, 6, 8, 8, 6, 6, 7, 7],
+
+    }],
+    fill: {
+        type: "gradient",
+        colors: '#E78B2F',
+        gradient: {
+            shadeIntensity: 1,
+            opacityFrom: 0.7,
+            opacityTo: 0.9,
+            stops: [0, 90, 100]
+        }
+    },
+    colors: ['#E78B2F'],
+    xaxis: {
+        categories: [
+            "02 Apr",
+            "03 Apr",
+            "04 Apr",
+            "05 Apr",
+            "06 Apr",
+            "09 Apr",
+            "10 Apr",
+            "12 Apr",
+            "14 Apr",
+            "17 Apr",
+            "18 Apr",
+            "18 Apr",
+            "20 Apr",
+            "22 Apr",
+            "24 Apr",
+        ],
+        tickPlacement: 'between',
+        labels: {
+            show: true,
+            showDuplicates: false,
+            trim: true,
+            minHeight: undefined,
+            maxHeight: 120,
+            style: {
+                colors: ['#E1E1E1', '#E1E1E1', '#E1E1E1', '#E1E1E1', '#E1E1E1', '#E1E1E1', '#E1E1E1', '#E1E1E1', '#E1E1E1', '#E1E1E1', '#E1E1E1', '#E1E1E1', '#E1E1E1', '#E1E1E1'],
+                fontSize: '12px',
+                fontFamily: 'Helvetica, Arial, sans-serif',
+                fontWeight: 400,
+                cssClass: 'apexcharts-xaxis-label',
+            },
+        },
+    },
+    grid: {
+        show: true,
+        borderColor: '#E1E1E1',
+        strokeDashArray: 8,
+        position: 'back',
+        xaxis: {
+            lines: {
+                show: false
+            }
+        },
+        yaxis: {
+            lines: {
+                show: true
+            }
+        },
+    },
+    markers: {
+        colors: ['#E78B2F']
+    },
+    dataLabels: {
+        enabled: false,
+    },
+    states: {
+        normal: {
+            filter: {
+                type: 'none',
+                value: 0,
+            }
+        },
+    },
+    tooltip: {
+        theme: 'light',
+        x: {
+            show: true,
+
+        },
+        y: {
+            show: false,
+            title: {
+                formatter: function () {
+                    return 'Position: '
+                }
+            }
+        },
+    },
+};
+
+// generate the chart
+let areaChartOrange = new ApexCharts(document.querySelector("#line-chart-orange"), areaOrange);
+areaChartOrange.render();
+// Area chart end...
+// line chart orange end
