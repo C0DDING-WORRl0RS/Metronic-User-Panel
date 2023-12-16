@@ -545,7 +545,7 @@ section>.container {
   box-shadow: var(--bs-app-content-shadow);
   border-radius: 30px;
   background-color: var(--headre-menu);
-  padding: 5%;
+  padding: 0%;
 }
 
 .dropdown-toggle::after {
