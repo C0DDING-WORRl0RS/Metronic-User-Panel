@@ -541,7 +541,24 @@ svg {
   flex-grow: 1;
 }
 /* container header end */
-
+/* button icon start */
+.button-icon-report{
+  color:#78829D ;
+  font-size: 12px;
+  cursor: pointer;
+}
+.button-icon-link{
+  background: #eeeeee;
+  padding: 10px 15px;  
+  border-radius: 4px;
+  text-decoration: none;
+  color: #78829D ;
+  
+}
+.button-icon-link:hover{
+  background-color: #dfdfdf;
+}
+/* button icon end */
 .main-modal::after {
   content: "";
   position: absolute;
