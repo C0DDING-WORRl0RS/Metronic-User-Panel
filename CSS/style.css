@@ -675,7 +675,7 @@ section>.container {
 /* chart start... */
 #chartdiv {
   width: 100%;
-  height: 300px;
+  height: 200px;
 }
 
 .apexcharts-inner {
@@ -684,12 +684,35 @@ section>.container {
 
 #column-chart {
   width: 100%;
-  height: 300px;
+  height: 250px;
 }
 
-#mapChart {
+#mapBarChart {
   width: 100%;
-  height: 300px;
+  height: 200px;
+}
+
+.two-table>div:first-of-type {
+  width: 100%;
+  height: 360px;
+  padding: 35px;
+}
+
+.two-table>div:last-of-type {
+  width: 100%;
+  height: 360px;
+  padding: 35px;
+}
+
+@media screen and (min-width : 768px) {
+  .two-table>div:first-of-type {
+    width: 30%;
+  }
+
+  .two-table>div:last-of-type {
+    width: 70%;
+  }
+
 }
 
 /* scroll icon start */
