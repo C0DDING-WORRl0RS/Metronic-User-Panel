@@ -709,10 +709,6 @@ section > .container {
 }
 
 /* chart start... */
-#chartdiv {
-  width: 100%;
-  height: 200px;
-}
 
 .apexcharts-inner {
   width: 100%;
@@ -723,7 +719,9 @@ section > .container {
   height: 250px;
 }
 
-#mapBarChart {
+#mapBarChart,
+#linerChart,
+#chartdiv {
   width: 100%;
   height: 200px;
 }
