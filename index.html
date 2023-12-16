@@ -590,7 +590,8 @@
   <section>
     <div class="container">
       <!-- ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, -->
-      <div class="app-content-menu-con menu-con menu-rounded menu-gray-800 menu-state-bg flex-wrap fs-5 fw-semibold border-bottom mt-n7 pt-5 pb-6 px-10 mb-10">
+      <div
+        class="app-content-menu-con menu-con menu-rounded menu-gray-800 menu-state-bg flex-wrap fs-5 fw-semibold border-bottom mt-n7 pt-5 pb-6 px-10 mb-10">
         <!--begin::Menu item-->
         <div class="menu-item-con pe-2">
           <a class="menu-link-con px-5 active" href="../../demo30/dist/index.html">
@@ -1503,10 +1504,16 @@
             </div>
           </div>
           <!-- chart header start -->
-
-          <!-- charts start -->
-          <div id="mapBarChart"></div>
-          <!-- charts end -->
+          <!-- charts div start -->
+          <div class="row">
+            <!-- map chart start -->
+            <div id="mapBarChart" class="col"></div>
+            <!-- map chart end -->
+            <!-- liner chart start -->
+            <div id="linerChart" class="col"></div>
+            <!-- liner chart end -->
+          </div>
+          <!-- charts div end -->
         </div>
         <!-- map + column chart end -->
       </div>
