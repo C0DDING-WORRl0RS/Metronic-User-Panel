@@ -1,5 +1,5 @@
 // letibles...
-let icons = document.querySelectorAll('.icon-modal');
+let icons = document.querySelectorAll(".icon-modal");
 
 // event...
 
@@ -38,62 +38,55 @@ $(document).ready(function () {
   }
 });
 
-
-
-
 // scroll icon ----------------------
 
 // Get the div that you want to show
-var scrollIcon = document.querySelector('.scrolltop');
-var header = document.querySelector("#main-header")
-scrollIcon.href = header
+var scrollIcon = document.querySelector(".scrolltop");
+var header = document.querySelector("#main-header");
+scrollIcon.href = header;
 
 // Function to show the div with flex display when scrolled down
 function showDivOnScroll() {
   var triggerHeight = 100; // The scroll position (in pixels) at which you want to show the div
-  
+
   if (window.scrollY > triggerHeight) {
     // When scrolled down past triggerHeight, change display to flex
-    scrollIcon.style.display = 'flex';
-    scrollIcon.style.opacity = '0.3';
+    scrollIcon.style.display = "flex";
+    scrollIcon.style.opacity = "0.3";
   } else {
     // Hide the div when above triggerHeight
-    scrollIcon.style.display = 'none';
-    scrollIcon.style.opacity = '0';
-
+    scrollIcon.style.display = "none";
+    scrollIcon.style.opacity = "0";
   }
 }
-scrollIcon.addEventListener('mouseover', function() {
+scrollIcon.addEventListener("mouseover", function () {
   // Change style when the mouse enters the element area
-  this.style.backgroundColor = '#2C9AFF'; // Put your desired hover style changes here
-  this.style.opacity = '1';
+  this.style.backgroundColor = "#2C9AFF"; // Put your desired hover style changes here
+  this.style.opacity = "1";
 });
 
 // Define the mouseout event listener
-scrollIcon.addEventListener('mouseout', function() {
+scrollIcon.addEventListener("mouseout", function () {
   // Revert style when the mouse leaves the element area
-  this.style.backgroundColor = ''; // Revert back to original styles
-  this.style.opacity = '0.3';
+  this.style.backgroundColor = ""; // Revert back to original styles
+  this.style.opacity = "0.3";
 });
 
 // Add the scroll event listener to the window
-window.addEventListener('scroll', showDivOnScroll);
-
-
-
-
+window.addEventListener("scroll", showDivOnScroll);
 
 // Function that updates the style
 function updateMarginOnScroll() {
-  var newMarginBottom = '-15px'; // New margin-bottom value when scrolled
+  var newMarginBottom = "-15px"; // New margin-bottom value when scrolled
 
   // Check if we have scrolled (this is an example, you might need to check against a specific value)
-  if (window.pageYOffset > 0) { // You can change '0' to any other number depending on when you want the style to apply
+  if (window.pageYOffset > 0) {
+    // You can change '0' to any other number depending on when you want the style to apply
     scrollIcon.style.marginBottom = newMarginBottom;
   } else {
-    scrollIcon.style.marginBottom = '0'; // Reset to original value when not scrolled
+    scrollIcon.style.marginBottom = "0"; // Reset to original value when not scrolled
   }
 }
 
 // Listen to the scroll event
-window.addEventListener('scroll', updateMarginOnScroll);
+window.addEventListener("scroll", updateMarginOnScroll);

@@ -542,20 +542,19 @@ svg {
 }
 /* container header end */
 /* button icon start */
-.button-icon-report{
-  color:#78829D ;
+.button-icon-report {
+  color: #78829d;
   font-size: 12px;
   cursor: pointer;
 }
-.button-icon-link{
+.button-icon-link {
   background: #eeeeee;
-  padding: 10px 15px;  
-  border-radius: 4px;
+  padding: 10px 15px;
+  border-radius: 7px;
   text-decoration: none;
-  color: #78829D ;
-  
+  color: #78829d;
 }
-.button-icon-link:hover{
+.button-icon-link:hover {
   background-color: #dfdfdf;
 }
 /* button icon end */
