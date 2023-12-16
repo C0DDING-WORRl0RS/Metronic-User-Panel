@@ -435,8 +435,8 @@ areaChartOrange.render();
 am5.ready(function () {
 
     // Create root element
-    var root = am5.Root.new("mapChart");
-    var colors = am5.ColorSet.new(root, {});
+    let root = am5.Root.new("mapChart");
+    let colors = am5.ColorSet.new(root, {});
 
 
     // Set themes
@@ -446,14 +446,14 @@ am5.ready(function () {
 
 
     // Create the map chart
-    var chart = root.container.children.push(am5map.MapChart.new(root, {
+    let chart = root.container.children.push(am5map.MapChart.new(root, {
         panX: "rotateX",
         projection: am5map.geoAlbersUsa()
     }));
 
 
     // Create polygon series for the world map
-    var usaSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+    let usaSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
         geoJSON: am5geodata_usaLow
     }));
 
@@ -468,30 +468,8 @@ am5.ready(function () {
         fill: am5.color("#62d562")
     });
 
-    // usaSeries.mapPolygons.template.events.on("click", (ev) => {
-    //     var dataItem = ev.target.dataItem;
-    //     var id = dataItem.get("id").toLowerCase().split("-").pop();
-    //     var name = dataItem.dataContext.name;
-    //     var zoomAnimation = usaSeries.zoomToDataItem(dataItem);
-
-    //     Promise.all([
-    //         zoomAnimation.waitForStop(),
-    //         am5.net.load("https://cdn.amcharts.com/lib/5/geodata/json/region/usa/congressional2022/" + id + "Low.json", chart)
-    //     ]).then(function (results) {
-    //         var geodata = am5.JSONParser.parse(results[1].response);
-    //         stateSeries.setAll({
-    //             geoJSON: geodata
-    //         });
-
-    //         stateSeries.show();
-    //         usaSeries.hide(100);
-    //         backContainer.show();
-    //         title.set("text", name);
-    //     });
-    // });
-
     // Create polygon series for the country map
-    var stateSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+    let stateSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
         visible: false
     }));
 
@@ -507,7 +485,7 @@ am5.ready(function () {
 
 
     // Add button to go back to continents view
-    var backContainer = chart.children.push(am5.Container.new(root, {
+    let backContainer = chart.children.push(am5.Container.new(root, {
         x: am5.p100,
         centerX: am5.p100,
         dx: -10,
@@ -525,12 +503,12 @@ am5.ready(function () {
         visible: false
     }));
 
-    var backLabel = backContainer.children.push(am5.Label.new(root, {
+    let backLabel = backContainer.children.push(am5.Label.new(root, {
         text: "Back",
         centerY: am5.p50
     }));
 
-    var backButton = backContainer.children.push(am5.Graphics.new(root, {
+    let backButton = backContainer.children.push(am5.Graphics.new(root, {
         width: 32,
         height: 32,
         centerY: am5.p50,
@@ -546,7 +524,7 @@ am5.ready(function () {
         title.set("text", "United States");
     });
 
-    var title = chart.children.push(am5.Label.new(root, {
+    let title = chart.children.push(am5.Label.new(root, {
         text: "آمریکا",
         x: am5.p50,
         y: 5,
