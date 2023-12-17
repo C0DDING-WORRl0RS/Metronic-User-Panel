@@ -792,6 +792,17 @@ span.badge.badge-light.status.success.fs-base {
 }
 
 /* half circle chart end */
+/* amar style start */
+.bar-chart.col-12.col-md.amar {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 30px;
+  margin-top: 24px;
+  padding: 3%;
+  border: 1px solid var(--header-menu-hover);
+}
+/* amar style start */
 
 @media screen and (min-width: 768px) {
   .two-table>div:first-of-type {
