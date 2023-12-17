@@ -722,7 +722,7 @@ section>.container {
 .text-danger-success {
   color: #50cd89;
   background-color: #eefbec;
-  padding: 9px;
+  padding: 1px 9px;
   height: 19px;
   width: 58px;
   margin-top: 11px;
@@ -775,6 +775,23 @@ section>.container {
   height: 360px;
   padding: 35px;
 }
+/* half circle chart start */
+.dollar-sign{
+  color: #B5B5C3;
+  font-size: 15px;
+}
+.dollar-price{
+  font-size: 1.6rem;
+}
+span.badge.badge-light.status.success.fs-base {
+  border-radius: 28px;
+  padding: 0;
+}
+.d-flex.flex-wrap.d-grid.gap-5.mb-10 {
+  margin-top: 32px;
+}
+
+/* half circle chart end */
 
 @media screen and (min-width: 768px) {
   .two-table>div:first-of-type {
