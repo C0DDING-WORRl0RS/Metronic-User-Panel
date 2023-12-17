@@ -234,6 +234,8 @@ am5.ready(function () {
         location: null
     })
 
+
+
     let xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
         maxDeviation: 0.3,
         categoryField: "country",
@@ -266,7 +268,7 @@ am5.ready(function () {
     series.columns.template.setAll({
         cornerRadiusTL: 5,
         cornerRadiusTR: 5,
-        strokeOpacity: 0
+        strokeOpacity: 0,
     });
 
     series.set("fill", am5.color('#2C9AFF')); // set Series color to red
@@ -452,13 +454,18 @@ am5.ready(function () {
             panX: false,
             panY: false,
             wheelX: "panX",
-            wheelY: "zoomX",
+            wheelY: "panX",
             layout: root.verticalLayout,
-            arrangeTooltips: false,
+            arrangeTooltips: true,
             paddingLeft: 0,
             paddingRight: 10
         })
     );
+
+    chart.get("colors").set("colors", [
+        am5.color("#50CD89"),
+        am5.color("#2C9AFF"),
+    ]);
 
     // Use only absolute numbers
     chart.getNumberFormatter().set("numberFormat", "#.#s");
@@ -475,93 +482,93 @@ am5.ready(function () {
     // Data
     let data = [{
             age: "85+",
-            male: -0.1,
-            female: 0.3
+            مرد: -3,
+            زن: 5
         },
         {
             age: "80-54",
-            male: -0.2,
-            female: 0.3
+            مرد: -3,
+            زن: 2.6
         },
         {
             age: "75-79",
-            male: -0.3,
-            female: 0.6
+            مرد: -2.8,
+            زن: 4.7
         },
         {
             age: "70-74",
-            male: -0.5,
-            female: 0.8
+            مرد: -6,
+            زن: 5
         },
         {
             age: "65-69",
-            male: -0.8,
-            female: 1.0
+            مرد: -8,
+            زن: 6.8
         },
         {
             age: "60-64",
-            male: -1.1,
-            female: 1.3
+            مرد: -12,
+            زن: 12
         },
         {
             age: "55-59",
-            male: -1.7,
-            female: 1.9
+            مرد: -10,
+            زن: 11
         },
         {
             age: "50-54",
-            male: -2.2,
-            female: 2.5
+            مرد: -13,
+            زن: 10
         },
         {
             age: "45-49",
-            male: -2.8,
-            female: 3.0
+            مرد: -12.6,
+            زن: 10.6
         },
         {
             age: "40-44",
-            male: -3.4,
-            female: 3.6
+            مرد: -11.8,
+            زن: 12.9
         },
         {
             age: "35-39",
-            male: -4.2,
-            female: 4.1
+            مرد: -13,
+            زن: 12
         },
         {
             age: "30-34",
-            male: -5.2,
-            female: 4.8
+            مرد: -13,
+            زن: 12
         },
         {
             age: "25-29",
-            male: -5.6,
-            female: 5.1
+            مرد: -5.6,
+            زن: 5.1
         },
         {
             age: "20-24",
-            male: -5.1,
-            female: 5.1
+            مرد: -8.5,
+            زن: 9
         },
         {
             age: "15-19",
-            male: -3.8,
-            female: 3.8
+            مرد: -8.4,
+            زن: 8
         },
         {
             age: "10-14",
-            male: -3.2,
-            female: 3.4
+            مرد: -13.5,
+            زن: 12.5
         },
         {
             age: "5-9",
-            male: -4.4,
-            female: 4.1
+            مرد: -13,
+            زن: 12
         },
         {
             age: "0-4",
-            male: -5.0,
-            female: 4.8
+            مرد: -12,
+            زن: 10
         }
     ];
 
@@ -571,11 +578,12 @@ am5.ready(function () {
         am5xy.CategoryAxis.new(root, {
             categoryField: "age",
             renderer: am5xy.AxisRendererY.new(root, {
+                show: false,
                 inversed: true,
                 cellStartLocation: 0.1,
-                cellEndLocation: 0.9,
-                minorGridEnabled: true,
-                minGridDistance: 20
+                cellEndLocation: 1,
+                minorGridEnabled: false,
+                minGridDistance: 40,
             })
         })
     );
@@ -585,12 +593,11 @@ am5.ready(function () {
     let xAxis = chart.xAxes.push(
         am5xy.ValueAxis.new(root, {
             renderer: am5xy.AxisRendererX.new(root, {
-                minGridDistance: 60,
+                minGridDistance: 90,
                 strokeOpacity: 0.1
             })
         })
     );
-
     // Add series
     // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
     function createSeries(field, labelCenterX, pointerOrientation, rangeValue) {
@@ -600,19 +607,20 @@ am5.ready(function () {
                 yAxis: yAxis,
                 valueXField: field,
                 categoryYField: "age",
-                sequencedInterpolation: true,
+                sequencedInterpolation: false,
                 clustered: false,
                 tooltip: am5.Tooltip.new(root, {
                     pointerOrientation: pointerOrientation,
-                    labelText: "{categoryY}: {valueX}"
+                    labelText: " مردها, زن"
                 })
             })
         );
-
         series.columns.template.setAll({
             height: am5.p100,
             strokeOpacity: 0,
-            fillOpacity: 0.8
+            fillOpacity: 1,
+            cornerRadiusTR: 5,
+            cornerRadiusBR: 5,
         });
 
         series.bullets.push(function () {
@@ -621,9 +629,7 @@ am5.ready(function () {
                 locationY: 0.5,
                 sprite: am5.Label.new(root, {
                     centerY: am5.p50,
-                    text: "{valueX}",
-                    populateText: true,
-                    centerX: labelCenterX
+                    populateText: false,
                 })
             });
         });
@@ -636,7 +642,7 @@ am5.ready(function () {
         });
         xAxis.createAxisRange(rangeDataItem);
         rangeDataItem.get("grid").setAll({
-            strokeOpacity: 1,
+            strokeOpacity: 0.1,
             stroke: series.get("stroke")
         });
 
@@ -645,9 +651,8 @@ am5.ready(function () {
             text: field.toUpperCase(),
             fontSize: "1.1em",
             fill: series.get("stroke"),
-            paddingTop: 10,
+            paddingLeft: 30,
             isMeasured: false,
-            centerX: labelCenterX
         });
         label.adapters.add("dy", function () {
             return -chart.plotContainer.height();
@@ -656,8 +661,8 @@ am5.ready(function () {
         return series;
     }
 
-    createSeries("male", am5.p100, "right", -3);
-    createSeries("female", 0, "left", 4);
+    createSeries("مرد", am5.p100, "right", -3);
+    createSeries("زن", 0, "left", 4);
 
     // Add cursor
     // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
@@ -775,8 +780,8 @@ am5.ready(function () {
     let title = chart.children.push(am5.Label.new(root, {
         text: "آمریکا",
         x: am5.p50,
-        y: 5,
-        fontSize: 20,
+        y: -10,
+        fontSize: 15,
         textAlign: "center"
     }));
 
