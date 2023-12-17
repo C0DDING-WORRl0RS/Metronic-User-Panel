@@ -4,13 +4,12 @@ const mediaTable = document.querySelector(".mediaTable");
 const Referencestable = document.querySelector("#References-table");
 const ShowPage = document.querySelector("#show-page");
 const progresTableItems = document.querySelector("#progres-table")
+const visitingTable = document.querySelector("#visitingTable")
+console.log(visitingTable);
 
 // event...
 document.addEventListener("DOMContentLoaded", tableData);
 
-
-// event...
-document.addEventListener("DOMContentLoaded", tableData)
 
 // functions...
 /**
@@ -137,6 +136,51 @@ const tableTemplate = (data) => {
 <!-- seprator end -->`;
 }
 
+/**
+ * template of table with data from json file
+ * @param {object} data - data og object is from config.JSON file (data of table)
+ * @returns - template (table) => with data
+ */
+const visitTable = (data) => {
+  return ` <div class="table-item w-100 d-flex justify-content-between align-items-center">
+  <div class="d-flex align-items-center justify-content-center">
+  <div><span class=${data.classIcon}>
+  ${data.nameIcon}
+  </span></div>
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <div class="fs-5 fw-bold">${data.app}</div>
+      <div class="fs-6">${data.text}</div>
+    </div>
+    </div>
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="fw-bold">${data.number}</div>
+    <div class="data-range" style="color: #50cd89;
+    background-color: #eefbec;
+    padding: 1px 9px;
+    height: 19px;
+    width: 60px;
+    font-weight : bold;
+    border-radius: 20px;
+    margin-bottom:10px
+    ">
+    <span class="material-symbols-outlined text-danger-span ms-n1">
+      arrow_upward
+    </span>
+      <span class="data-range-span">${data.range}</span>
+    </div>
+  </div>
+</div>
+<!-- seprator strat -->
+<div class="separator my-2 separator-dashed"></div>
+<!-- seprator end -->`;
+}
+
+
+/**
+ * template of table
+ * @param {object} data - data of table
+ * @returns 
+ */
 const ReferencesTemplate = (data) => {
   return `   <tr>
   
@@ -156,6 +200,11 @@ const ReferencesTemplate = (data) => {
 </tr>`;
 }
 
+/**
+ * template of table
+ * @param {object} data - data from json file about table
+ * @returns 
+ */
 const progresTemplate = (data) => {
   return `<tr>
   <td class="d-flex align-items-center border-0 ps-0"><a href="#"
@@ -179,7 +228,7 @@ function tableData() {
     //change the json file format to onject
     .then((response) => response.json())
     .then(async (json) => addTableItem(await json))
-    .catch((error) => alert(error.message));
+    .catch((error) => console.log(error));
 }
 
 /**
@@ -187,6 +236,7 @@ function tableData() {
  * @param {Array} data - objects in json file
  */
 function addTableItem(data) {
+  console.log(data);
   for (let i = 0; i < data.data.length; i++) {
     let item = data.data[i];
     let obj = {
@@ -199,6 +249,20 @@ function addTableItem(data) {
 
     // call function for add template
     addTable(mediaTable, obj, tableTemplate)
+  }
+  for (let i = 0; i < data.visiting.length; i++) {
+    let item = data.visiting[i];
+    let obj = {
+      classIcon: item.classIcon,
+      nameIcon: item.nameIcon,
+      app: item.app,
+      text: item.text,
+      number: item.number,
+      range: item.range,
+    };
+
+    // call function for add template
+    addTable(visitingTable, obj, visitTable)
   }
   for (let i = 0; i < data.ReferencesTable.length; i++) {
     let item = data.ReferencesTable[i];
@@ -240,5 +304,6 @@ function addTableItem(data) {
  * @param {*} callBack - callback function of template
  */
 function addTable(position, data, callBack) {
+  console.log(data.app_logo);
   position.insertAdjacentHTML('beforeend', callBack(data))
 }

@@ -155,5 +155,55 @@
         "num":263,
         "progres":"50%"
       }
+    ],
+    "visiting": [
+      {
+        "classIcon": "material-symbols-outlined",
+        "nameIcon": " rocket_launch",
+        "app": "منبع مستقیم",
+        "text": "کلیک لینک مستقیم",
+        "number": 1067,
+        "range": "2.6%"
+      },
+      {
+        "classIcon": "material-symbols-outlined",
+        "nameIcon": " music_note",
+        "app": "سوشیال",
+        "text": "همه سوشیال",
+        "number": 24588,
+        "range": "4.1%"
+      },
+      {
+        "classIcon": "material-symbols-outlined",
+        "nameIcon": "  mail",
+        "app": "ایمیل جدید",
+        "text": "میل چیپ",
+        "number": 794,
+        "range": "0.2%"
+      },
+      {
+        "classIcon": "material-symbols-outlined",
+        "nameIcon": "  sports_baseball",
+        "app": "مراجعات",
+        "text": "بازدید ها چرخشی",
+        "number": 6578,
+        "range": "0.4%"
+      },
+      {
+        "classIcon": "material-symbols-outlined",
+        "nameIcon": "  sports_baseball",
+        "app": "دیگر",
+        "text": "بسیار از منابع",
+        "number": 79458,
+        "range": "8.3%"
+      },
+      {
+        "classIcon": "material-symbols-outlined",
+        "nameIcon": "  sports_baseball",
+        "app": "شبکه Rising",
+        "text": "s,adhg",
+        "number": 18047,
+        "range": "1.9%"
+      }
     ]
   }
