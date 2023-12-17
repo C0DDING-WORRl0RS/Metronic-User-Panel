@@ -143,13 +143,15 @@ function ReferencesTemplate(data) {
   </td>
 </tr>`
 }
+
 function tableData() {
 
   // get data from the JSON file
   fetch('../JSON/./config.json')
     //change the json file format to onject 
     .then((response) => response.json())
-    .then(async (json) => addTableItem(await json)).catch((error) => alert(error.message))
+    .then(async json => addTableItem(await json)).catch(error => alert(error.message))
+
 
 }
 
@@ -202,12 +204,17 @@ function addTableItem(data) {
 function addTable(data) {
   mediaTable.insertAdjacentHTML('beforeend', tableTemplate(data))
 }
-
+/**
+ * call template funtion for add to DOM
+ * @param {object} data - all perperties from the object in array 
+ */
 function ReferencesTable(data) {
   Referencestable.insertAdjacentHTML('beforeend', ReferencesTemplate(data))
 }
-
-function showPages(data){
+/**
+ * call template funtion for add to DOM
+ * @param {object} data - all perperties from the object in array 
+ */
+function showPages(data) {
   ShowPage.insertAdjacentHTML("beforeend", ReferencesTemplate(data))
-  console.log(data);
 }
