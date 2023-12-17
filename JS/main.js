@@ -3,10 +3,14 @@ let icons = document.querySelectorAll(".icon-modal");
 const mediaTable = document.querySelector(".mediaTable");
 const Referencestable = document.querySelector("#References-table");
 const ShowPage = document.querySelector("#show-page");
+const progresTableItems = document.querySelector("#progres-table")
 
 // event...
 document.addEventListener("DOMContentLoaded", tableData);
-document.addEventListener("DOMContentLoaded", ReferencesTable);
+
+
+// event...
+document.addEventListener("DOMContentLoaded", tableData)
 
 // functions...
 /**
@@ -101,7 +105,7 @@ window.addEventListener("scroll", updateMarginOnScroll);
  * @param {object} data - data og object is from config.JSON file (data of table)
  * @returns - template (table) => with data
  */
-function tableTemplate(data) {
+const tableTemplate = (data) => {
   return ` <div class="table-item w-100 d-flex justify-content-between align-items-center">
   <div class="d-flex align-items-center justify-content-center">
   <div><img src=${data.image} alt=""></div>
@@ -133,7 +137,7 @@ function tableTemplate(data) {
 <!-- seprator end -->`;
 }
 
-function ReferencesTemplate(data) {
+const ReferencesTemplate = (data) => {
   return `   <tr>
   
   <td class="ps-0"><a href="#" class=" table-a link-underline link-underline-opacity-0" style="color black;font-weight : bold">${data.app}</a></td>
@@ -150,6 +154,23 @@ function ReferencesTemplate(data) {
     </div>
   </td>
 </tr>`;
+}
+
+const progresTemplate = (data) => {
+  return `<tr>
+  <td class="d-flex align-items-center border-0 ps-0"><a href="#"
+      class="link-underline link-underline-opacity-0">${data.text}</a></td>
+  <td class="border-0 ps-0">
+    <div class="d-flex align-items-center">
+      <span class=" fw-bold text-gray-800 fs-6 ">${data.num}
+      </span>
+      <div class="progress w-100" role="progressbar" aria-label="Basic example" aria-valuenow="50"
+        aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="width: ${data.progres}"></div>
+      </div>
+    </div>
+  </td>
+</tr>`
 }
 
 function tableData() {
@@ -177,7 +198,7 @@ function addTableItem(data) {
     };
 
     // call function for add template
-    addTable(obj);
+    addTable(mediaTable, obj, tableTemplate)
   }
   for (let i = 0; i < data.ReferencesTable.length; i++) {
     let item = data.ReferencesTable[i];
@@ -186,9 +207,9 @@ function addTableItem(data) {
       num01: item.num01,
       rate01: item.rate01,
       num02: item.num02,
-      rate02: item.rate02,
-    };
-    ReferencesTable(obj);
+      rate02: item.rate02
+    }
+    addTable(Referencestable, obj, ReferencesTemplate)
   }
   for (let i = 0; i < data.ShowPage.length; i++) {
     let item = data.ShowPage[i];
@@ -197,29 +218,27 @@ function addTableItem(data) {
       num01: item.num01,
       rate01: item.rate01,
       num02: item.num02,
-      rate02: item.rate02,
-    };
-    showPages(obj);
+      rate02: item.rate02
+    }
+    addTable(ShowPage, obj, ReferencesTemplate)
+  }
+  for (let i = 0; i < data.progres.length; i++) {
+    let item = data.progres[i];
+    let obj = {
+      text: item.text,
+      num: item.num,
+      progres: item.progres
+    }
+    addTable(progresTableItems, obj, progresTemplate)
   }
 }
+
 /**
- * call template funtion for add to DOM
- * @param {object} data - all perperties from the object in array
+ * send table with data to DOM
+ * @param {position} position - position of the table
+ * @param {object} data - data of table
+ * @param {*} callBack - callback function of template
  */
-function addTable(data) {
-  mediaTable.insertAdjacentHTML("beforeend", tableTemplate(data));
-}
-/**
- * call template funtion for add to DOM
- * @param {object} data - all perperties from the object in array 
- */
-function ReferencesTable(data) {
-  Referencestable.insertAdjacentHTML("beforeend", ReferencesTemplate(data));
-}
-/**
- * call template funtion for add to DOM
- * @param {object} data - all perperties from the object in array 
- */
-function showPages(data) {
-  ShowPage.insertAdjacentHTML("beforeend", ReferencesTemplate(data))
+function addTable(position, data, callBack) {
+  position.insertAdjacentHTML('beforeend', callBack(data))
 }

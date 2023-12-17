@@ -878,6 +878,10 @@ span.badge.badge-light.status.success.fs-base {
 
 /* table01 end */
 
+.progress-bar {
+  background-color: var(--third-name-profile-color);
+}
+
 /* tables end */
 
 /* scroll icon start */
