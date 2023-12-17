@@ -1,0 +1,39 @@
+{
+    "data": [
+      {
+        "image": "Images/Table/dribbble-icon-1-logo-png-transparent.png",
+        "app_logo": "دریبل",
+        "text": "انجمن",
+        "number": 579,
+        "range": 2.6
+      },
+      {
+        "image": "Images/Table/images.jfif",
+        "app_logo": "لینکدین",
+        "text": "سوشیال",
+        "number": 1088,
+        "range": 0.4
+      },
+      {
+        "image": "Images/Table/images(1).jfif",
+        "app_logo": "اسلاک",
+        "text": "پیام رسان",
+        "number": 794,
+        "range": 0.2
+      },
+      {
+        "image": "Images/Table/images.png",
+        "app_logo": "یوتیوب",
+        "text": "کانال ویدیویی",
+        "number": 978,
+        "range": 4.1
+      },
+      {
+        "image": "Images/Table/images (2).jfif",
+        "app_logo": "اینستاگرام",
+        "text": "سوشیال",
+        "number": 1458,
+        "range": 8.3
+      }
+    ]
+  }

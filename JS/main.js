@@ -1,7 +1,9 @@
 // letibles...
 let icons = document.querySelectorAll(".icon-modal");
+const mediaTable = document.querySelector(".mediaTable")
 
 // event...
+document.addEventListener("DOMContentLoaded", tableData)
 
 // functions...
 /**
@@ -90,3 +92,69 @@ function updateMarginOnScroll() {
 
 // Listen to the scroll event
 window.addEventListener("scroll", updateMarginOnScroll);
+
+/**
+ * template of table with data from json file 
+ * @param {object} data - data og object is from config.JSON file (data of table)
+ * @returns - template (table) => with data
+ */
+function tableTemplate(data) {
+  return ` <div class="table-item w-100 d-flex justify-content-between align-items-center">
+  <div class="d-flex align-items-center justify-content-center">
+    <div><img src=${data.image} alt=""></div>
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <div class="fs-5 fw-bold">${data.app}</div>
+      <div class="fs-6">${data.text}</div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="fw-bold">${data.number}</div>
+    <div>
+    <span class="material-symbols-outlined text-danger-span ms-n1">
+      arrow_upward
+    </span>
+      <span>${data.range}</span>
+    </div>
+  </div>
+</div>
+<!-- seprator strat -->
+<div class="separator my-2 separator-dashed"></div>
+<!-- seprator end -->`
+}
+
+function tableData() {
+
+  // get data from the JSON file
+  fetch('../JSON/./config.json')
+    //change the json file format to onject 
+    .then((response) => response.json())
+    .then(async (json) => addTableItem(await json)).catch((error) => alert(error.message))
+
+}
+
+/**
+ * array from json fole then this function separate all perperties from the object in array 
+ * @param {Array} data - objects in json file
+ */
+function addTableItem(data) {
+  for (let i = 0; i < data.data.length; i++) {
+    let item = data.data[i];
+    let obj = {
+      image: item.image,
+      app: item.app_logo,
+      text: item.text,
+      number: item.number,
+      range: item.range
+    }
+
+    // call function for add template
+    addTable(obj)
+  }
+}
+/**
+ * call template funtion for add to DOM
+ * @param {object} data - all perperties from the object in array 
+ */
+function addTable(data) {
+  mediaTable.insertAdjacentHTML('beforeend', tableTemplate(data))
+}
