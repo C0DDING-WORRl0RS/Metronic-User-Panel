@@ -2,6 +2,7 @@
 let icons = document.querySelectorAll(".icon-modal");
 const mediaTable = document.querySelector(".mediaTable");
 const Referencestable = document.querySelector("#References-table")
+const ShowPage = document.querySelector("#show-page")
 
 // event...
 document.addEventListener("DOMContentLoaded", tableData)
@@ -142,7 +143,6 @@ function ReferencesTemplate(data) {
   </td>
 </tr>`
 }
-
 function tableData() {
 
   // get data from the JSON file
@@ -182,6 +182,17 @@ function addTableItem(data) {
     }
     ReferencesTable(obj)
   }
+  for (let i = 0; i < data.ShowPage.length; i++) {
+    let item = data.ShowPage[i];
+    let obj = {
+      app: item.app,
+      num01: item.num01,
+      rate01: item.rate01,
+      num02: item.num02,
+      rate02: item.rate02
+    }
+    showPages(obj)
+  }
 
 }
 /**
@@ -194,4 +205,9 @@ function addTable(data) {
 
 function ReferencesTable(data) {
   Referencestable.insertAdjacentHTML('beforeend', ReferencesTemplate(data))
+}
+
+function showPages(data){
+  ShowPage.insertAdjacentHTML("beforeend", ReferencesTemplate(data))
+  console.log(data);
 }

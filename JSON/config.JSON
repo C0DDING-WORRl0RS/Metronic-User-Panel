@@ -15,7 +15,7 @@
         "range": 0.4
       },
       {
-        "image": "Images/Table/images(1).jfif",
+        "image": "Images/Table/slack-icon.svg",
         "app_logo": "اسلاک",
         "text": "پیام رسان",
         "number": 794,
@@ -29,7 +29,7 @@
         "range": 4.1
       },
       {
-        "image": "Images/Table/images (2).jfif",
+        "image": "Images/Table/instagram-2-1.svg",
         "app_logo": "اینستاگرام",
         "text": "سوشیال",
         "number": 1458,
@@ -74,6 +74,50 @@
       },
       {
         "app": "Themeforest",
+        "num01": 237,
+        "rate01": "106",
+        "num02": "36.52%",
+        "rate02": "3.06%+"
+      }
+    ],
+    "ShowPage":[
+      {
+        "app": "index",
+        "num01": 1256,
+        "rate01": "935-",
+        "num02": "23.63%",
+        "rate02": "9.35%-"
+      },
+      {
+        "app": "محصولات",
+        "num01": 446,
+        "rate01": "576-",
+        "num02": "23.45%",
+        "rate02": "57.02%-"
+      },
+      {
+        "app": "rtl-theme.com",
+        "num01": 67,
+        "rate01": "576-",
+        "num02": "73.63%",
+        "rate02": "28.73%+"
+      },
+      {
+        "app": "studio.keenthemes.com",
+        "num01": 2.136,
+        "rate01": "1229-",
+        "num02": "3.67%",
+        "rate02": "12.29%-"
+      },
+      {
+        "app": "graphics.keenthemes.com",
+        "num01": 945,
+        "rate01": "637-",
+        "num02": "25.03%",
+        "rate02": "9.35%-"
+      },
+      {
+        "app": "مجوزها",
         "num01": 237,
         "rate01": "106",
         "num02": "36.52%",
