@@ -65,6 +65,28 @@ section:last-of-type .bar-chart {
   padding-bottom: 0;
 }
 
+.colory {
+  color: var(--link-color);
+}
+
+.color-dark {
+  color: var(--menu-link);
+}
+
+.footer-hover:hover {
+  transition: all .2s ease-in-out;
+  color: var(--navbar-hover-color);
+}
+
+footer a {
+  text-decoration: none;
+}
+
+.font-footer {
+  font-size: .8rem;
+  font-weight: bold;
+}
+
 /* header start */
 header {
   height: 60px;
