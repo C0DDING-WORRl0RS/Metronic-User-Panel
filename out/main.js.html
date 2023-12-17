@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: main.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: main.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// letibles...
+let icons = document.querySelectorAll(".icon-modal");
+const mediaTable = document.querySelector(".mediaTable");
+const Referencestable = document.querySelector("#References-table");
+const ShowPage = document.querySelector("#show-page");
+const progresTableItems = document.querySelector("#progres-table")
+const visitingTable = document.querySelector("#visitingTable")
+console.log(visitingTable);
+
+// event...
+document.addEventListener("DOMContentLoaded", tableData);
+
+
+// functions...
+/**
+ * when user touchend in moball show this modal
+ */
+icons.forEach(function (item) {
+  item.addEventListener("touchend", () => {
+    Swal.fire({
+      title: "در حال ساخت...",
+      showClass: {
+        popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `,
+      },
+      hideClass: {
+        popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `,
+      },
+    });
+  });
+});
+
+// for responsive mode in right item if header
+$(document).ready(function () {
+  // Check if the window width is less than a certain value (e.g., 768 pixels)
+  if ($(window).width() > 779) {
+    // Disable the accordion functionality
+    $(".accordion-right").removeClass("accordion");
+  }
+});
+
+// scroll icon ----------------------
+
+// Get the div that you want to show
+var scrollIcon = document.querySelector(".scrolltop");
+var header = document.querySelector("#main-header");
+scrollIcon.href = header;
+
+// Function to show the div with flex display when scrolled down
+function showDivOnScroll() {
+  var triggerHeight = 100; // The scroll position (in pixels) at which you want to show the div
+
+  if (window.scrollY > triggerHeight) {
+    // When scrolled down past triggerHeight, change display to flex
+    scrollIcon.style.display = "flex";
+    scrollIcon.style.opacity = "0.3";
+  } else {
+    // Hide the div when above triggerHeight
+    scrollIcon.style.display = "none";
+    scrollIcon.style.opacity = "0";
+  }
+}
+scrollIcon.addEventListener("mouseover", function () {
+  // Change style when the mouse enters the element area
+  this.style.backgroundColor = "#2C9AFF"; // Put your desired hover style changes here
+  this.style.opacity = "1";
+});
+
+// Define the mouseout event listener
+scrollIcon.addEventListener("mouseout", function () {
+  // Revert style when the mouse leaves the element area
+  this.style.backgroundColor = ""; // Revert back to original styles
+  this.style.opacity = "0.3";
+});
+
+// Add the scroll event listener to the window
+window.addEventListener("scroll", showDivOnScroll);
+
+// Function that updates the style
+function updateMarginOnScroll() {
+  var newMarginBottom = "-15px"; // New margin-bottom value when scrolled
+
+  // Check if we have scrolled (this is an example, you might need to check against a specific value)
+  if (window.pageYOffset > 0) {
+    // You can change '0' to any other number depending on when you want the style to apply
+    scrollIcon.style.marginBottom = newMarginBottom;
+  } else {
+    scrollIcon.style.marginBottom = "0"; // Reset to original value when not scrolled
+  }
+}
+
+// Listen to the scroll event
+window.addEventListener("scroll", updateMarginOnScroll);
+
+/**
+ * template of table with data from json file
+ * @param {object} data - data og object is from config.JSON file (data of table)
+ * @returns - template (table) => with data
+ */
+const tableTemplate = (data) => {
+  return ` &lt;div class="table-item w-100 d-flex justify-content-between align-items-center">
+  &lt;div class="d-flex align-items-center justify-content-center">
+  &lt;div>&lt;img src=${data.image} alt="">&lt;/div>
+    &lt;div class="d-flex flex-column justify-content-center align-items-center">
+      &lt;div class="fs-5 fw-bold">${data.app}&lt;/div>
+      &lt;div class="fs-6">${data.text}&lt;/div>
+    &lt;/div>
+    &lt;/div>
+  &lt;div class="d-flex justify-content-center align-items-center">
+    &lt;div class="fw-bold">${data.number}&lt;/div>
+    &lt;div class="data-range" style="color: #50cd89;
+    background-color: #eefbec;
+    padding: 1px 9px;
+    height: 19px;
+    width: 60px;
+    font-weight : bold;
+    border-radius: 20px;
+    margin-bottom:10px
+    ">
+    &lt;span class="material-symbols-outlined text-danger-span ms-n1">
+      arrow_upward
+    &lt;/span>
+      &lt;span class="data-range-span">${data.range}&lt;/span>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
+&lt;!-- seprator strat -->
+&lt;div class="separator my-2 separator-dashed">&lt;/div>
+&lt;!-- seprator end -->`;
+}
+
+/**
+ * template of table with data from json file
+ * @param {object} data - data og object is from config.JSON file (data of table)
+ * @returns - template (table) => with data
+ */
+const visitTable = (data) => {
+  return ` &lt;div class="visitTable table-item w-100 d-flex justify-content-between align-items-center">
+  &lt;div class="d-flex align-items-center justify-content-center">
+  &lt;div>&lt;span class="${data.classIcon} visit-icon">
+  ${data.nameIcon}
+  &lt;/span>&lt;/div>
+    &lt;div class="d-flex flex-column justify-content-center align-items-center">
+      &lt;div class=" visit-title">${data.app}&lt;/div>
+      &lt;div class=" visit-text">${data.text}&lt;/div>
+    &lt;/div>
+    &lt;/div>
+  &lt;div class="d-flex justify-content-center align-items-center">
+    &lt;div class="fw-bold visit-num">${data.number}&lt;/div>
+    &lt;div class=" visit-range d-flex justify-content-center align-items-center" style="  color: #50cd89;
+    background-color: #eefbec;
+    padding: 1px 9px;
+    width: 58px;
+    margin-top: 11px;
+    border-radius: 20px;">
+    &lt;span class="visit-range-item material-symbols-outlined text-danger-span ms-n1">
+      arrow_upward
+    &lt;/span>
+      &lt;span class="visit-range-item">${data.range}&lt;/span>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
+&lt;!-- seprator strat -->
+&lt;div class="separator my-2 separator-dashed">&lt;/div>
+&lt;!-- seprator end -->`;
+}
+
+
+/**
+ * template of table
+ * @param {object} data - data of table
+ * @returns 
+ */
+const ReferencesTemplate = (data) => {
+  return `   &lt;tr>
+  
+  &lt;td class="ps-0">&lt;a href="#" class="about table-a link-underline link-underline-opacity-0" style="color black;font-weight : bold">${data.app}&lt;/a>&lt;/td>
+  &lt;td class=" ps-0">
+    &lt;div class="d-flex justify-content-end align-items-center gap-3">
+      &lt;span style = "color:black; font-weight:bold">${data.num01}&lt;/span>
+      &lt;span style="color:red">${data.rate01}&lt;/span>
+    &lt;/div>
+  &lt;/td>
+  &lt;td class="ps-0">
+    &lt;div class="d-flex justify-content-end align-items-center gap-3">
+      &lt;span style = "color:black; font-weight:bold">${data.num02}&lt;/span>
+      &lt;span  style="color:#50CD89">${data.rate02}&lt;/span>
+    &lt;/div>
+  &lt;/td>
+&lt;/tr>`;
+}
+
+/**
+ * template of table
+ * @param {object} data - data from json file about table
+ * @returns 
+ */
+const progresTemplate = (data) => {
+  return `&lt;tr>
+  &lt;td class="d-flex align-items-center border-0 ps-0">&lt;a href="#"
+      class="link-underline link-underline-opacity-0 color-progress">${data.text}&lt;/a>&lt;/td>
+  &lt;td class="border-0 ps-0">
+    &lt;div class="d-flex align-items-center">
+      &lt;span class=" fw-bold text-gray-800 fs-6 ">${data.num}
+      &lt;/span>
+      &lt;div class="progress w-100" role="progressbar" aria-label="Basic example" aria-valuenow="50"
+        aria-valuemin="0" aria-valuemax="100">
+        &lt;div class="progress-bar" style="width: ${data.progres}">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/td>
+&lt;/tr>`
+}
+
+function tableData() {
+  // get data from the JSON file
+  fetch("../JSON/./config.json")
+    //change the json file format to onject
+    .then((response) => response.json())
+    .then(async (json) => addTableItem(await json))
+    .catch((error) => console.log(error));
+}
+
+/**
+ * array from json fole then this function separate all perperties from the object in array
+ * @param {Array} data - objects in json file
+ */
+function addTableItem(data) {
+  console.log(data);
+  for (let i = 0; i &lt; data.data.length; i++) {
+    let item = data.data[i];
+    let obj = {
+      image: item.image,
+      app: item.app_logo,
+      text: item.text,
+      number: item.number,
+      range: item.range,
+    };
+
+    // call function for add template
+    addTable(mediaTable, obj, tableTemplate)
+  }
+  for (let i = 0; i &lt; data.visiting.length; i++) {
+    let item = data.visiting[i];
+    let obj = {
+      classIcon: item.classIcon,
+      nameIcon: item.nameIcon,
+      app: item.app,
+      text: item.text,
+      number: item.number,
+      range: item.range,
+    };
+
+    // call function for add template
+    addTable(visitingTable, obj, visitTable)
+  }
+  for (let i = 0; i &lt; data.ReferencesTable.length; i++) {
+    let item = data.ReferencesTable[i];
+    let obj = {
+      app: item.app,
+      num01: item.num01,
+      rate01: item.rate01,
+      num02: item.num02,
+      rate02: item.rate02
+    }
+    addTable(Referencestable, obj, ReferencesTemplate)
+  }
+  for (let i = 0; i &lt; data.ShowPage.length; i++) {
+    let item = data.ShowPage[i];
+    let obj = {
+      app: item.app,
+      num01: item.num01,
+      rate01: item.rate01,
+      num02: item.num02,
+      rate02: item.rate02
+    }
+    addTable(ShowPage, obj, ReferencesTemplate)
+  }
+  for (let i = 0; i &lt; data.progres.length; i++) {
+    let item = data.progres[i];
+    let obj = {
+      text: item.text,
+      num: item.num,
+      progres: item.progres
+    }
+    addTable(progresTableItems, obj, progresTemplate)
+  }
+}
+
+/**
+ * send table with data to DOM
+ * @param {position} position - position of the table
+ * @param {object} data - data of table
+ * @param {*} callBack - callback function of template
+ */
+function addTable(position, data, callBack) {
+  console.log(data.app_logo);
+  position.insertAdjacentHTML('beforeend', callBack(data))
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#ReferencesTemplate">ReferencesTemplate</a></li><li><a href="global.html#addTable">addTable</a></li><li><a href="global.html#addTableItem">addTableItem</a></li><li><a href="global.html#progresTemplate">progresTemplate</a></li><li><a href="global.html#tableTemplate">tableTemplate</a></li><li><a href="global.html#visitTable">visitTable</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Mon Dec 18 2023 02:47:51 GMT+0330 (Iran Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
