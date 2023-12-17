@@ -1,12 +1,12 @@
 // letibles...
 let icons = document.querySelectorAll(".icon-modal");
 const mediaTable = document.querySelector(".mediaTable");
-const Referencestable = document.querySelector("#References-table")
-const ShowPage = document.querySelector("#show-page")
+const Referencestable = document.querySelector("#References-table");
+const ShowPage = document.querySelector("#show-page");
 
 // event...
-document.addEventListener("DOMContentLoaded", tableData)
-document.addEventListener("DOMContentLoaded", ReferencesTable)
+document.addEventListener("DOMContentLoaded", tableData);
+document.addEventListener("DOMContentLoaded", ReferencesTable);
 
 // functions...
 /**
@@ -97,66 +97,72 @@ function updateMarginOnScroll() {
 window.addEventListener("scroll", updateMarginOnScroll);
 
 /**
- * template of table with data from json file 
+ * template of table with data from json file
  * @param {object} data - data og object is from config.JSON file (data of table)
  * @returns - template (table) => with data
  */
 function tableTemplate(data) {
   return ` <div class="table-item w-100 d-flex justify-content-between align-items-center">
   <div class="d-flex align-items-center justify-content-center">
-    <div><img src=${data.image} alt=""></div>
+  <div><img src=${data.image} alt=""></div>
     <div class="d-flex flex-column justify-content-center align-items-center">
       <div class="fs-5 fw-bold">${data.app}</div>
       <div class="fs-6">${data.text}</div>
     </div>
-  </div>
+    </div>
   <div class="d-flex justify-content-center align-items-center">
     <div class="fw-bold">${data.number}</div>
-    <div>
+    <div class="data-range" style="color: #50cd89;
+    background-color: #eefbec;
+    padding: 1px 9px;
+    height: 19px;
+    width: 60px;
+    font-weight : bold;
+    border-radius: 20px;
+    margin-bottom:10px
+    ">
     <span class="material-symbols-outlined text-danger-span ms-n1">
       arrow_upward
     </span>
-      <span>${data.range}</span>
+      <span class="data-range-span">${data.range}</span>
     </div>
   </div>
 </div>
 <!-- seprator strat -->
 <div class="separator my-2 separator-dashed"></div>
-<!-- seprator end -->`
+<!-- seprator end -->`;
 }
 
 function ReferencesTemplate(data) {
   return `   <tr>
-
-  <td class="ps-0"><a href="#" class="link-underline link-underline-opacity-0">${data.app}</a></td>
+  
+  <td class="ps-0"><a href="#" class=" table-a link-underline link-underline-opacity-0" style="color black;font-weight : bold">${data.app}</a></td>
   <td class=" ps-0">
     <div class="d-flex justify-content-end align-items-center gap-3">
-      <span>${data.num01}</span>
-      <span>${data.rate01}</span>
+      <span style = "color:black; font-weight:bold">${data.num01}</span>
+      <span style="color:red">${data.rate01}</span>
     </div>
   </td>
   <td class="ps-0">
     <div class="d-flex justify-content-end align-items-center gap-3">
-      <span>${data.num02}</span>
-      <span>${data.rate02}</span>
+      <span style = "color:black; font-weight:bold">${data.num02}</span>
+      <span  style="color:#50CD89">${data.rate02}</span>
     </div>
   </td>
-</tr>`
+</tr>`;
 }
 
 function tableData() {
-
   // get data from the JSON file
-  fetch('../JSON/./config.json')
-    //change the json file format to onject 
+  fetch("../JSON/./config.json")
+    //change the json file format to onject
     .then((response) => response.json())
-    .then(async json => addTableItem(await json)).catch(error => alert(error.message))
-
-
+    .then(async (json) => addTableItem(await json))
+    .catch((error) => alert(error.message));
 }
 
 /**
- * array from json fole then this function separate all perperties from the object in array 
+ * array from json fole then this function separate all perperties from the object in array
  * @param {Array} data - objects in json file
  */
 function addTableItem(data) {
@@ -167,11 +173,11 @@ function addTableItem(data) {
       app: item.app_logo,
       text: item.text,
       number: item.number,
-      range: item.range
-    }
+      range: item.range,
+    };
 
     // call function for add template
-    addTable(obj)
+    addTable(obj);
   }
   for (let i = 0; i < data.ReferencesTable.length; i++) {
     let item = data.ReferencesTable[i];
@@ -180,9 +186,9 @@ function addTableItem(data) {
       num01: item.num01,
       rate01: item.rate01,
       num02: item.num02,
-      rate02: item.rate02
-    }
-    ReferencesTable(obj)
+      rate02: item.rate02,
+    };
+    ReferencesTable(obj);
   }
   for (let i = 0; i < data.ShowPage.length; i++) {
     let item = data.ShowPage[i];
@@ -191,25 +197,24 @@ function addTableItem(data) {
       num01: item.num01,
       rate01: item.rate01,
       num02: item.num02,
-      rate02: item.rate02
-    }
-    showPages(obj)
+      rate02: item.rate02,
+    };
+    showPages(obj);
   }
-
 }
 /**
  * call template funtion for add to DOM
- * @param {object} data - all perperties from the object in array 
+ * @param {object} data - all perperties from the object in array
  */
 function addTable(data) {
-  mediaTable.insertAdjacentHTML('beforeend', tableTemplate(data))
+  mediaTable.insertAdjacentHTML("beforeend", tableTemplate(data));
 }
 /**
  * call template funtion for add to DOM
  * @param {object} data - all perperties from the object in array 
  */
 function ReferencesTable(data) {
-  Referencestable.insertAdjacentHTML('beforeend', ReferencesTemplate(data))
+  Referencestable.insertAdjacentHTML("beforeend", ReferencesTemplate(data));
 }
 /**
  * call template funtion for add to DOM
