@@ -142,31 +142,28 @@ const tableTemplate = (data) => {
  * @returns - template (table) => with data
  */
 const visitTable = (data) => {
-  return ` <div class="table-item w-100 d-flex justify-content-between align-items-center">
+  return ` <div class="visitTable table-item w-100 d-flex justify-content-between align-items-center">
   <div class="d-flex align-items-center justify-content-center">
-  <div><span class=${data.classIcon}>
+  <div><span class="${data.classIcon} visit-icon">
   ${data.nameIcon}
   </span></div>
     <div class="d-flex flex-column justify-content-center align-items-center">
-      <div class="fs-5 fw-bold">${data.app}</div>
-      <div class="fs-6">${data.text}</div>
+      <div class=" visit-title">${data.app}</div>
+      <div class=" visit-text">${data.text}</div>
     </div>
     </div>
   <div class="d-flex justify-content-center align-items-center">
-    <div class="fw-bold">${data.number}</div>
-    <div class="data-range" style="color: #50cd89;
+    <div class="fw-bold visit-num">${data.number}</div>
+    <div class=" visit-range d-flex justify-content-center align-items-center" style="  color: #50cd89;
     background-color: #eefbec;
     padding: 1px 9px;
-    height: 19px;
-    width: 60px;
-    font-weight : bold;
-    border-radius: 20px;
-    margin-bottom:10px
-    ">
-    <span class="material-symbols-outlined text-danger-span ms-n1">
+    width: 58px;
+    margin-top: 11px;
+    border-radius: 20px;">
+    <span class="visit-range-item material-symbols-outlined text-danger-span ms-n1">
       arrow_upward
     </span>
-      <span class="data-range-span">${data.range}</span>
+      <span class="visit-range-item">${data.range}</span>
     </div>
   </div>
 </div>
@@ -184,7 +181,7 @@ const visitTable = (data) => {
 const ReferencesTemplate = (data) => {
   return `   <tr>
   
-  <td class="ps-0"><a href="#" class=" table-a link-underline link-underline-opacity-0" style="color black;font-weight : bold">${data.app}</a></td>
+  <td class="ps-0"><a href="#" class="about table-a link-underline link-underline-opacity-0" style="color black;font-weight : bold">${data.app}</a></td>
   <td class=" ps-0">
     <div class="d-flex justify-content-end align-items-center gap-3">
       <span style = "color:black; font-weight:bold">${data.num01}</span>
@@ -208,7 +205,7 @@ const ReferencesTemplate = (data) => {
 const progresTemplate = (data) => {
   return `<tr>
   <td class="d-flex align-items-center border-0 ps-0"><a href="#"
-      class="link-underline link-underline-opacity-0">${data.text}</a></td>
+      class="link-underline link-underline-opacity-0 color-progress">${data.text}</a></td>
   <td class="border-0 ps-0">
     <div class="d-flex align-items-center">
       <span class=" fw-bold text-gray-800 fs-6 ">${data.num}

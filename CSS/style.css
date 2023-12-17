@@ -16,6 +16,50 @@ input {
   border-bottom: 1px solid var(--bs-border-color);
 }
 
+section:last-of-type .bar-chart {
+  overflow-y: hidden;
+}
+
+.color-progress {
+  color: var(--bg-600);
+  font-size: 2vh;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.color-progress:hover {
+  color: var(--color-600);
+}
+
+.visit-icon {
+  font-size: 3.5vh;
+}
+
+.visit-title {
+  font-size: 2vh;
+  font-weight: bold;
+}
+
+.visit-text {
+  font-size: 1.5vh;
+  font-weight: bold;
+  color: var(--text-gray-400);
+}
+
+.visit-num {
+  font-weight: bold;
+  font-size: 2vh;
+}
+
+.visit-range-item {
+  font-size: 2vh;
+}
+
+.visitTable div {
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
 /* header start */
 header {
   height: 60px;
@@ -25,22 +69,27 @@ header {
 .app-headr {
   height: 100%;
 }
+
 .two-table.row {
   width: 100%;
 }
+
 .bar-chart.col-6.col-md {
   margin-right: 14px;
 }
+
 .two-table.d-md-flex.justify-content-between.align-items-center {
   width: 100%;
 }
+
 /* .bar-chart {
   margin-right: -36px;
 } */
 .container {
   width: 100%;
 }
-@media screen and (min-width: 768px){
+
+@media screen and (min-width: 768px) {
 
   .two-table>div:last-of-type {
     width: 68%;
@@ -523,6 +572,7 @@ svg {
 
 /* header end */
 
+
 .main-modal {
   position: relative;
   font-family: iran-sans-title;
@@ -860,7 +910,8 @@ span.badge.badge-light.status.success.fs-base {
   border-bottom-style: dashed;
   border-bottom-color: var(--border);
 }
-.data-range{
+
+.data-range {
   color: #50cd89;
   background-color: #eefbec;
   padding: 1px 9px;
@@ -870,7 +921,8 @@ span.badge.badge-light.status.success.fs-base {
   border-radius: 20px;
 
 }
-.table-a{
+
+.table-a {
   text-decoration: none;
   color: black;
   font-weight: bold;
