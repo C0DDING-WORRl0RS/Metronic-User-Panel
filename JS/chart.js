@@ -661,8 +661,8 @@ am5.ready(function () {
         return series;
     }
 
-    createSeries("مرد", am5.p100, "right", -3);
-    createSeries("زن", 0, "left", 4);
+    createSeries("مرد", am5.p100, "right", -10);
+    createSeries("زن", 0, "left", 10);
 
     // Add cursor
     // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
