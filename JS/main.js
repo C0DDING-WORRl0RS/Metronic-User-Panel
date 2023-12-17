@@ -1,9 +1,11 @@
 // letibles...
 let icons = document.querySelectorAll(".icon-modal");
-const mediaTable = document.querySelector(".mediaTable")
+const mediaTable = document.querySelector(".mediaTable");
+const Referencestable = document.querySelector("#References-table")
 
 // event...
 document.addEventListener("DOMContentLoaded", tableData)
+document.addEventListener("DOMContentLoaded", ReferencesTable)
 
 // functions...
 /**
@@ -122,6 +124,25 @@ function tableTemplate(data) {
 <!-- seprator end -->`
 }
 
+function ReferencesTemplate(data) {
+  return `   <tr>
+
+  <td class="ps-0"><a href="#" class="link-underline link-underline-opacity-0">${data.app}</a></td>
+  <td class=" ps-0">
+    <div class="d-flex justify-content-end align-items-center gap-3">
+      <span>${data.num01}</span>
+      <span>${data.rate01}</span>
+    </div>
+  </td>
+  <td class="ps-0">
+    <div class="d-flex justify-content-end align-items-center gap-3">
+      <span>${data.num02}</span>
+      <span>${data.rate02}</span>
+    </div>
+  </td>
+</tr>`
+}
+
 function tableData() {
 
   // get data from the JSON file
@@ -150,6 +171,18 @@ function addTableItem(data) {
     // call function for add template
     addTable(obj)
   }
+  for (let i = 0; i < data.ReferencesTable.length; i++) {
+    let item = data.ReferencesTable[i];
+    let obj = {
+      app: item.app,
+      num01: item.num01,
+      rate01: item.rate01,
+      num02: item.num02,
+      rate02: item.rate02
+    }
+    ReferencesTable(obj)
+  }
+
 }
 /**
  * call template funtion for add to DOM
@@ -157,4 +190,8 @@ function addTableItem(data) {
  */
 function addTable(data) {
   mediaTable.insertAdjacentHTML('beforeend', tableTemplate(data))
+}
+
+function ReferencesTable(data) {
+  Referencestable.insertAdjacentHTML('beforeend', ReferencesTemplate(data))
 }
