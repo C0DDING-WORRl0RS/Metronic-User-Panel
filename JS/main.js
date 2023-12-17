@@ -5,11 +5,31 @@ const Referencestable = document.querySelector("#References-table");
 const ShowPage = document.querySelector("#show-page");
 const progresTableItems = document.querySelector("#progres-table")
 const visitingTable = document.querySelector("#visitingTable")
-console.log(visitingTable);
+const searchModal = document.querySelector("#search-modal")
 
 // event...
 document.addEventListener("DOMContentLoaded", tableData);
 
+
+searchModal.addEventListener("click", () => {
+  Swal.fire({
+    title: "در حال ساخت...",
+    showClass: {
+      popup: `
+              animate__animated
+              animate__fadeInUp
+              animate__faster
+            `,
+    },
+    hideClass: {
+      popup: `
+              animate__animated
+              animate__fadeOutDown
+              animate__faster
+            `,
+    },
+  });
+})
 
 // functions...
 /**
