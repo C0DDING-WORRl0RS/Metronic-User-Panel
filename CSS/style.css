@@ -759,7 +759,7 @@ section>.container {
 
 #mapBarChart,
 #linerChart,
-#chartdiv {
+#chartdiv,#semiCercleChart {
   width: 100%;
   height: 200px;
 }
