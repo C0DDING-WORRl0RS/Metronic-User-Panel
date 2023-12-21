@@ -222,6 +222,8 @@ const ReferencesTemplate = (data) => {
  * @param {object} data - data from json file about table
  * @returns 
  */
+
+
 const progresTemplate = (data) => {
   return `<tr>
   <td class="d-flex align-items-center border-0 ps-0"><a href="#"
