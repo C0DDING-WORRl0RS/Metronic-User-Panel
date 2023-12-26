@@ -241,12 +241,11 @@ const progresTemplate = (data) => {
 </tr>`
 }
 
-function tableData() {
+async function tableData() {
   // get data from the JSON file
-  fetch("../JSON/./config.json")
+  await (await fetch("../JSON/./config.json")).json()
     //change the json file format to onject
-    .then((response) => response.json())
-    .then(async (json) => addTableItem(await json))
+    .then((response) => addTableItem(response))
     .catch((error) => console.log(error));
 }
 
