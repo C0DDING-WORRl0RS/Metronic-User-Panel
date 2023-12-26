@@ -245,16 +245,36 @@ async function tableData() {
   // get data from the JSON file
   await (await fetch("../JSON/./config.json")).json()
     //change the json file format to onject
-    .then((response) => addTableItem(response))
+    .then(async (response) => addTableItem(await response))
     .catch((error) => console.log(error));
 }
 
 /**
- * array from json fole then this function separate all perperties from the object in array
+ * array from json file then this function separate all perperties from the object in array
  * @param {Array} data - objects in json file
  */
 function addTableItem(data) {
-  console.log(data);
+  // call media table functions + send data in json file
+  mediaT(data)
+
+  // call visit table functions + send data in json file
+  visitT(data)
+
+  // call refrenc table functions + send data in json file
+  ReferencesT(data)
+
+  // call showing table functions + send data in json file
+  showingT(data)
+
+  // call progress table functions + send data in json file
+  progressT(data)
+}
+
+/**
+ *  array from json file then this function separate all perperties from the object in array and show just data about media table
+ * @param {object} data - objects in json file
+ */
+const mediaT = (data) => {
   for (let i = 0; i < data.data.length; i++) {
     let item = data.data[i];
     let obj = {
@@ -268,6 +288,65 @@ function addTableItem(data) {
     // call function for add template
     addTable(mediaTable, obj, tableTemplate)
   }
+}
+
+/**
+ * array from json file then this function separate all perperties from the object in array and show just data about refrence table
+ * @param {object} data - objects in json file
+ */
+const ReferencesT = (data) => {
+  for (let i = 0; i < data.ReferencesTable.length; i++) {
+    let item = data.ReferencesTable[i];
+    let obj = {
+      app: item.app,
+      num01: item.num01,
+      rate01: item.rate01,
+      num02: item.num02,
+      rate02: item.rate02
+    }
+    addTable(Referencestable, obj, ReferencesTemplate)
+  }
+}
+
+/**
+ * array from json file then this function separate all perperties from the object in array and show just data about show table
+ * @param {object} data - objects in json file
+ */
+const showingT = (data) => {
+  for (let i = 0; i < data.ShowPage.length; i++) {
+    let item = data.ShowPage[i];
+    let obj = {
+      app: item.app,
+      num01: item.num01,
+      rate01: item.rate01,
+      num02: item.num02,
+      rate02: item.rate02
+    }
+    addTable(ShowPage, obj, ReferencesTemplate)
+  }
+}
+
+/**
+ * array from json file then this function separate all perperties from the object in array and show just data about progrece table
+ * @param {object} data - objects in json file
+ */
+const progressT = (data) => {
+  for (let i = 0; i < data.progres.length; i++) {
+    let item = data.progres[i];
+    let obj = {
+      text: item.text,
+      num: item.num,
+      progres: item.progres
+    }
+    addTable(progresTableItems, obj, progresTemplate)
+  }
+}
+
+/**
+ * array from json file then this function separate all perperties from the object in array and show just data about visit table
+ * @param {object} data - objects in json file
+ */
+const visitT = (data) => {
   for (let i = 0; i < data.visiting.length; i++) {
     let item = data.visiting[i];
     let obj = {
@@ -282,37 +361,6 @@ function addTableItem(data) {
     // call function for add template
     addTable(visitingTable, obj, visitTable)
   }
-  for (let i = 0; i < data.ReferencesTable.length; i++) {
-    let item = data.ReferencesTable[i];
-    let obj = {
-      app: item.app,
-      num01: item.num01,
-      rate01: item.rate01,
-      num02: item.num02,
-      rate02: item.rate02
-    }
-    addTable(Referencestable, obj, ReferencesTemplate)
-  }
-  for (let i = 0; i < data.ShowPage.length; i++) {
-    let item = data.ShowPage[i];
-    let obj = {
-      app: item.app,
-      num01: item.num01,
-      rate01: item.rate01,
-      num02: item.num02,
-      rate02: item.rate02
-    }
-    addTable(ShowPage, obj, ReferencesTemplate)
-  }
-  for (let i = 0; i < data.progres.length; i++) {
-    let item = data.progres[i];
-    let obj = {
-      text: item.text,
-      num: item.num,
-      progres: item.progres
-    }
-    addTable(progresTableItems, obj, progresTemplate)
-  }
 }
 
 /**
@@ -322,6 +370,5 @@ function addTableItem(data) {
  * @param {*} callBack - callback function of template
  */
 function addTable(position, data, callBack) {
-  console.log(data.app_logo);
   position.insertAdjacentHTML('beforeend', callBack(data))
 }
