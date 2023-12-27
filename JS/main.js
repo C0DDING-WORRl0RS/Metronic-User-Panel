@@ -8,7 +8,11 @@ const visitingTable = document.querySelector("#visitingTable")
 const searchModal = document.querySelector("#search-modal")
 
 // event...
-document.addEventListener("DOMContentLoaded", tableData);
+document.addEventListener("DOMContentLoaded", () => {
+  //change the json file format to onject
+  tableData().then((response) => addTableItem(response))
+    .catch((error) => console.log(error));
+});
 
 
 searchModal.addEventListener("click", () => {
@@ -105,7 +109,7 @@ window.addEventListener("scroll", showDivOnScroll);
 
 // Function that updates the style
 function updateMarginOnScroll() {
-  var newMarginBottom = "-15px"; // New margin-bottom value when scrolled
+  let newMarginBottom = "-15px"; // New margin-bottom value when scrolled
 
   // Check if we have scrolled (this is an example, you might need to check against a specific value)
   if (window.pageYOffset > 0) {
@@ -222,8 +226,6 @@ const ReferencesTemplate = (data) => {
  * @param {object} data - data from json file about table
  * @returns 
  */
-
-
 const progresTemplate = (data) => {
   return `<tr>
   <td class="d-flex align-items-center border-0 ps-0"><a href="#"
@@ -241,12 +243,11 @@ const progresTemplate = (data) => {
 </tr>`
 }
 
-async function tableData() {
+const tableData = async () => {
   // get data from the JSON file
-  await (await fetch("../JSON/./config.json")).json()
-    //change the json file format to onject
-    .then(async (response) => addTableItem(await response))
-    .catch((error) => console.log(error));
+  return await (await fetch("../JSON/./config.json")).json()
+
+
 }
 
 /**
