@@ -245,10 +245,13 @@ const progresTemplate = (data) => {
 
 const tableData = async () => {
   // get data from the JSON file
-  return await (await fetch("../JSON/./config.json")).json()
+  const configData = await fetch("../JSON/./config.json");
 
+  // parse the data from JSON
+  const jsonData = await configData.json();
 
-}
+  return jsonData;
+};
 
 /**
  * array from json file then this function separate all perperties from the object in array
