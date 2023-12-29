@@ -8,10 +8,15 @@ const visitingTable = document.querySelector("#visitingTable")
 const searchModal = document.querySelector("#search-modal")
 
 // event...
-document.addEventListener("DOMContentLoaded", () => {
-  //change the json file format to onject
-  tableData().then((response) => addTableItem(response))
-    .catch((error) => console.log(error));
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    //change the json file format to onject
+    const tableObject = await tableData();
+
+    addTableItem(tableObject);
+  } catch (error) {
+    throw error;
+  }
 });
 
 
@@ -243,9 +248,13 @@ const progresTemplate = (data) => {
 </tr>`
 }
 
+/**
+ * 
+ * @returns - data from json
+ */
 const tableData = async () => {
   // get data from the JSON file
-  const configData = await fetch("../JSON/./config.json");
+  const configData = await fetch("../JSON/./tableDeta.json");
 
   // parse the data from JSON
   const jsonData = await configData.json();
