@@ -254,7 +254,7 @@ const progresTemplate = (data) => {
  */
 const tableData = async () => {
   // get data from the JSON file
-  const configData = await fetch("../JSON/./tableDeta.json");
+  const configData = await fetch("JSON/tableDeta.json");
 
   // parse the data from JSON
   const jsonData = await configData.json();
